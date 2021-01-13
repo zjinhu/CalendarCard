@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftCSV
 extension Formatter {
     static let date: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -28,6 +29,8 @@ struct Item {
     static let mock: [String] = dates(for: "2021-12-31")
     
     static func dates(for date: String) -> [String] {
+        
+        getNongli()
         // For calendrical calculations you should use noon time
         // So lets get endDate's noon time
         guard let endDate = Formatter.date.date(from: date)?.noon else { return [] }
@@ -42,5 +45,25 @@ struct Item {
             date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
         }
         return dates
+    }
+    
+    static func getNongli(){
+        
+        guard let csvURL = ResourceHelper.url(forResource: "wnl", withExtension: "csv") else {
+            return
+        }
+        let csv = try? CSV(url: csvURL)
+        print("\(csv?.enumeratedRows[1])")
+    }
+}
+
+struct ResourceHelper {
+    static func url(forResource name: String, withExtension type: String) -> URL? {
+        let bundle = Bundle.main
+        
+        if let url = bundle.url(forResource: name, withExtension: type) {
+            return url
+        }
+        return nil
     }
 }

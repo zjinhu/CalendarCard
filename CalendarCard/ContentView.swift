@@ -10,8 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @State var data: [String] = Item.mock
     var body: some View {
+        
         CardStack(
-          direction: EightDirections.direction,
+          direction: FourDirections.direction,
           data: data,
           onSwipe: { index, direction in
             print("Swiped to \(index)--\(direction)")

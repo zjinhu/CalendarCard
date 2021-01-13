@@ -23,6 +23,7 @@ struct CardItemView: View {
       .background(Color.white)
       .cornerRadius(12)
       .shadow(radius: 4)
+
     }
   }
 }
