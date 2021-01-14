@@ -18,7 +18,10 @@ struct ContentView: View {
             print("Swiped to \(index)--\(direction)")
           },
           content: { date, _, _ in
-            CardItemView(date: date)
+            let d = Item.stringConvertDate(string: date)
+            if let info = Item.getDateInfo(date: d){
+                CardItemView(info: info)
+            }
           }
         )
         .padding(.all, 10.0)

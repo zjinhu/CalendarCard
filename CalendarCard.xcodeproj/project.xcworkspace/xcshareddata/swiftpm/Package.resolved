@@ -2,12 +2,30 @@
   "object": {
     "pins": [
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "eaf6e622dd41b07b251d8f01752eab31bc811493",
+          "version": "5.4.1"
+        }
+      },
+      {
         "package": "SwiftCSV",
         "repositoryURL": "https://github.com/swiftcsv/SwiftCSV",
         "state": {
           "branch": null,
           "revision": "ad2042d0ba2ea260246b0e1b1d5710cbc53e2836",
           "version": "0.6.0"
+        }
+      },
+      {
+        "package": "SwiftMesh",
+        "repositoryURL": "https://github.com/jackiehu/SwiftMesh.git",
+        "state": {
+          "branch": null,
+          "revision": "fdb6fc03806877f9455c57720e6fd9b9076f9bda",
+          "version": "1.5.0"
         }
       }
     ]
