@@ -1,5 +1,5 @@
 //
-//  CardHead.swift
+//  CardFoot.swift
 //  CalendarCard
 //
 //  Created by iOS on 2021/1/14.
@@ -7,38 +7,21 @@
 
 import SwiftUI
 
-struct CardHead: View {
+struct CardFoot: View {
     let info: DateInfo
-    
+    let baseColor: Color
     var body: some View {
         HStack{
-            Text(String(info.s公历年))
-                .font(.title)
-                .fontWeight(.semibold)
-                .padding(.leading, 10.0)
+            FootLeft(info: info, baseColor: baseColor)
             Spacer()
-            Text(Item.getMonth(index: info.s公历月))
-                .font(.title)
-                .fontWeight(.bold)
-            Spacer()
-            Text("\(info.s公历月)月")
-                .font(.title)
-                .fontWeight(.semibold)
-                .padding(.trailing, 10.0)
+            FootRight(info: info, baseColor: baseColor)
         }
-        .padding(.all, 10.0)
-        .frame(height: 50.0)
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.red, lineWidth: 4)
-        )
-        
     }
 }
 
-struct CardHead_Previews: PreviewProvider {
+struct CardFoot_Previews: PreviewProvider {
     static var previews: some View {
-        CardHead(info: DateInfo(s公历日期: "2021-01-15",
+        CardFoot(info: DateInfo(s公历日期: "2021-01-15",
                                 s公历年: 2021,
                                 s公历月: 01,
                                 s公历日: 15,
@@ -56,6 +39,6 @@ struct CardHead_Previews: PreviewProvider {
                                 s公历节日: "",
                                 s农历节日: "",
                                 s特殊节日: "",
-                                s数九数伏: "三九第九天"))
+                                s数九数伏: "三九第九天"), baseColor: .green)
     }
 }

@@ -8,52 +8,19 @@
 import SwiftUI
 
 struct CardItemView: View {
-  let info: DateInfo
+    
 
-  var body: some View {
-    GeometryReader { geo in
-      VStack {
-        
-        CardHead(info: info)
-            .padding([.top, .leading, .trailing])
-        
-        HStack{
-            if !info.s公历节日.isEmpty{
-                Text(info.s公历节日)
-                    .font(Font.system(size: 20))
-                    .fontWeight(.bold)
-            }
-            if !info.s农历节日.isEmpty{
-                Text(info.s农历节日)
-                    .font(Font.system(size: 20))
-                    .fontWeight(.bold)
-            }
-            if !info.s特殊节日.isEmpty{
-                Text(info.s特殊节日)
-                    .font(Font.system(size: 20))
-                    .fontWeight(.bold)
-            }
+    let info: DateInfo
+    
+    @State private var isPresented = false
+    
+    var body: some View {
+        GeometryReader { geo in
+            CardItem(info: info)
         }
-        .padding(.top, 30.0)
         
-        Spacer()
-        
-        Text("\(info.s公历日)")
-            .font(Font.system(size: 200))
-            .fontWeight(.bold)
-        
-        Spacer()
-        CardBottom(info: info)
-            .padding([.leading, .bottom, .trailing], 10.0)
-
-      }
-      .background(Color.white)
-      .cornerRadius(12)
-      .shadow(radius: 4)
-
     }
-  }
-
+    
 }
 
 struct CardItemView_Previews: PreviewProvider {

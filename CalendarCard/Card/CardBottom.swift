@@ -9,26 +9,31 @@ import SwiftUI
 
 struct CardBottom: View {
     let info: DateInfo
+    let baseColor: Color
     var body: some View {
         VStack{
             Image(Item.getImageName(name: info.s属相))
                 .renderingMode(.template)
-                .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.white/*@END_MENU_TOKEN@*/)
-                .foregroundColor(Color.red)
+                .background(Color("BG_Color"))
+                .foregroundColor(baseColor)
             Text("\(info.s年干支)(\(info.s属相))年 农历\(info.s农历月)")
                 .padding(.bottom, 5.0)
+                .foregroundColor(baseColor)
 
-            CardFoot(info: info)
-            
+            CardFoot(info: info, baseColor: baseColor)
+
             HStack{
                 if !info.s节气.isEmpty{
                     Text(info.s节气)
+                        .foregroundColor(baseColor)
                 }
                 if !info.s节气时间.isEmpty{
                     Text(info.s节气时间)
+                        .foregroundColor(baseColor)
                 }
                 if !info.s数九数伏.isEmpty{
                     Text(info.s数九数伏)
+                        .foregroundColor(baseColor)
                 }
             }
             .padding(.vertical, 2.0)
@@ -56,6 +61,6 @@ struct CardBottom_Previews: PreviewProvider {
                                   s公历节日: "",
                                   s农历节日: "",
                                   s特殊节日: "",
-                                  s数九数伏: "三九第九天"))
+                                  s数九数伏: "三九第九天"), baseColor: .green)
     }
 }

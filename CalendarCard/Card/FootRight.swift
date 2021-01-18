@@ -9,24 +9,26 @@ import SwiftUI
 
 struct FootRight: View {
     let info: DateInfo
+    let baseColor: Color
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Text(Item.getWeek(week: info.s星期))
                     .font(.system(size: 16))
+                    .foregroundColor(baseColor)
                 Spacer()
             }
             .frame(height: 30.0)
-            .background(Color.white)
+            .background(Color("Bottom_Color"))
             
             Text(info.s星期)
                 .font(Font.system(size: 30))
                 .fontWeight(.bold)
-                .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                .foregroundColor(Color("Bottom_Color"))
         }
-        .background(Color.red)
-        .border(/*@START_MENU_TOKEN@*/Color.red/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/3/*@END_MENU_TOKEN@*/)
+        .background(baseColor)
+        .border(baseColor, width: /*@START_MENU_TOKEN@*/3/*@END_MENU_TOKEN@*/)
     }
 }
 
@@ -50,6 +52,6 @@ struct FootRight_Previews: PreviewProvider {
                                  s公历节日: "",
                                  s农历节日: "",
                                  s特殊节日: "",
-                                 s数九数伏: "三九第九天"))
+                                 s数九数伏: "三九第九天"), baseColor: .green)
     }
 }

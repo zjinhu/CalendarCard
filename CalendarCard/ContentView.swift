@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var data: [String] = Item.mock
     var body: some View {
-        
+
         CardStack(
           direction: FourDirections.direction,
           data: data,
@@ -25,6 +25,7 @@ struct ContentView: View {
           }
         )
         .padding(.all, 10.0)
+        
     }
 }
 
