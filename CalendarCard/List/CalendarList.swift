@@ -25,7 +25,7 @@ struct CalendarList: View {
             .clipShape(Circle())
             .padding(.vertical, 4)
         }
-      }
+    }
 }
 
 struct CalendarList_Previews: PreviewProvider {

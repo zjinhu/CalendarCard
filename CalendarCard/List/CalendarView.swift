@@ -65,14 +65,16 @@ struct CalendarView<DateView>: View where DateView: View {
     }
 
     var body: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
-            ForEach(months, id: \.self) { month in
-                Section(header: header(for: month)) {
-                    ForEach(days(for: month), id: \.self) { date in
-                        if calendar.isDate(date, equalTo: month, toGranularity: .month) {
-                            content(date).id(date)
-                        } else {
-                            content(date).hidden()
+        ScrollView{
+            LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
+                ForEach(months, id: \.self) { month in
+                    Section(header: header(for: month)) {
+                        ForEach(days(for: month), id: \.self) { date in
+                            if calendar.isDate(date, equalTo: month, toGranularity: .month) {
+                                content(date).id(date)
+                            } else {
+                                content(date).hidden()
+                            }
                         }
                     }
                 }

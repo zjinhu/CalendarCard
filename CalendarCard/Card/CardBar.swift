@@ -6,13 +6,11 @@
 //
 
 import SwiftUI
-
 struct CardBar: View {
     let baseColor: Color
     
-    @State var isPresented = false
-    var rkManager = RKManager(calendar: Calendar.current, minimumDate: Date(), maximumDate: Date().addingTimeInterval(60*60*24*365), mode: 0)
-    
+    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
+
     var body: some View {
         HStack{
             Button(action: {
@@ -31,15 +29,15 @@ struct CardBar: View {
             Spacer()
             
             Button(action: {
-                self.isPresented = true
+                viewControllerHolder?.present() {
+                    CalendarList()
+                }
             }) {
                 Image("Calendar_Image")
             }
             .padding(20.0)
             .frame(width: 60.0, height: 50.0)
-            .sheet(isPresented: self.$isPresented, content: {
-                    RKViewController(isPresented: self.$isPresented, rkManager: self.rkManager)
-            })
+            
             
         }
         .frame(height: 50.0)
