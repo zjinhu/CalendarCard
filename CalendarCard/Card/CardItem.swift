@@ -9,11 +9,7 @@ import SwiftUI
 
 struct CardItem: View {
     @ObservedObject var request: Request = Request()
-    
-    @State private var isPresented = false
-    
-    var rkManager = RKManager(calendar: Calendar.current, minimumDate: Date(), maximumDate: Date().addingTimeInterval(60*60*24*365), mode: 0)
-    
+
     init(info: DateInfo) {
         
         let y = info.s公历月 > 9 ? "\(info.s公历月)" : "0\(info.s公历月)"
@@ -34,6 +30,9 @@ struct CardItem: View {
             VStack {
                 
                 if let info = current{
+                    
+                    CardBar(baseColor: request.holiday?.type?.type == 1 || request.holiday?.type?.type == 2 ? Color("Red_Color") : Color("Green_Color"))
+                    
                     CardHead(info: info, baseColor: request.holiday?.type?.type == 1 || request.holiday?.type?.type == 2 ? Color("Red_Color") : Color("Green_Color"))
                         .padding([.top, .leading, .trailing])
                     
@@ -48,26 +47,7 @@ struct CardItem: View {
                 }
 
             }
-            .background(Color("BG_Color"))
-            .cornerRadius(12)
-            .shadow(radius: 4)
-            
-            Button(action: {
-                self.isPresented = true
-            }, label: {
-                VStack{
-                    Spacer()
-                    HStack{
-                        Spacer()
-                    }
-                }
-            })
-            .sheet(isPresented: $isPresented, content: {
-                RKViewController(isPresented: self.$isPresented, rkManager: self.rkManager)
-            })
-            
         }
-        
     }
 }
 

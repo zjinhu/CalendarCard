@@ -111,8 +111,10 @@ struct Item {
         return date!
     }
 
-    static let mock: [String] = dates(for: Date().endOfCurrentYear().toString())
-    
+    static func loadDate() -> [String] {
+        return dates(for: Date().endOfCurrentYear().toString())
+    }
+
     ///获取今天到年底共计多少天
     static func dates(for date: String) -> [String] {
         // For calendrical calculations you should use noon time

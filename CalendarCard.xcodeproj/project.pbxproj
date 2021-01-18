@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		816B29B425B536730067C835 /* CardBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29B325B536730067C835 /* CardBar.swift */; };
 		8194D23D25B182CC00D0D33C /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194D23C25B182CC00D0D33C /* CardItem.swift */; };
 		8194D25125B1A1ED00D0D33C /* RKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194D24A25B1A1ED00D0D33C /* RKViewController.swift */; };
 		8194D25225B1A1ED00D0D33C /* RKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194D24B25B1A1ED00D0D33C /* RKManager.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		816B29B325B536730067C835 /* CardBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBar.swift; sourceTree = "<group>"; };
 		8194D23C25B182CC00D0D33C /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		8194D24A25B1A1ED00D0D33C /* RKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKViewController.swift; sourceTree = "<group>"; };
 		8194D24B25B1A1ED00D0D33C /* RKManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKManager.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				8194D23C25B182CC00D0D33C /* CardItem.swift */,
+				816B29B325B536730067C835 /* CardBar.swift */,
 				81DEE55325B02E9D00BEA901 /* CardHead.swift */,
 				81DEE55F25B04DE100BEA901 /* CardBottom.swift */,
 				81DEE55625B037B100BEA901 /* CardFoot.swift */,
@@ -164,9 +167,9 @@
 		91BF249225AD6C7200DD34A4 /* CardStack */ = {
 			isa = PBXGroup;
 			children = (
-				91BF249325AD6C7200DD34A4 /* CardSwipeDirection.swift */,
-				91BF249425AD6C7200DD34A4 /* CardView.swift */,
 				91BF249525AD6C7200DD34A4 /* CardStack.swift */,
+				91BF249425AD6C7200DD34A4 /* CardView.swift */,
+				91BF249325AD6C7200DD34A4 /* CardSwipeDirection.swift */,
 				91BF249625AD6C7200DD34A4 /* CardStackConfiguration.swift */,
 			);
 			path = CardStack;
@@ -260,6 +263,7 @@
 				8194D23D25B182CC00D0D33C /* CardItem.swift in Sources */,
 				91BF24A725ADA65D00DD34A4 /* CardItemView.swift in Sources */,
 				9161554D25AC0F9E00009C2B /* CalendarCardApp.swift in Sources */,
+				816B29B425B536730067C835 /* CardBar.swift in Sources */,
 				81DEE55725B037B100BEA901 /* CardFoot.swift in Sources */,
 				8194D25525B1A1ED00D0D33C /* RKCell.swift in Sources */,
 				81DEE55D25B0397F00BEA901 /* FootRight.swift in Sources */,

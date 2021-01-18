@@ -11,14 +11,15 @@ struct CardItemView: View {
     
 
     let info: DateInfo
-    
-    @State private var isPresented = false
-    
+
     var body: some View {
         GeometryReader { geo in
             CardItem(info: info)
         }
-        
+        .background(Color("BG_Color"))
+        .cornerRadius(12)
+        .shadow(radius: 4)
+        .padding(.all, 10.0)
     }
     
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var data: [String] = Item.mock
+    @State var data: [String] = Item.loadDate()
     var body: some View {
 
         CardStack(
@@ -24,9 +24,8 @@ struct ContentView: View {
             }
           }
         )
-        .padding(.all, 10.0)
-        
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -4,7 +4,7 @@ public struct CardStack<Direction, ID: Hashable, Data: RandomAccessCollection, C
 where Data.Index: Hashable {
 
   @Environment(\.cardStackConfiguration) private var configuration: CardStackConfiguration
-  @State private var currentIndex: Data.Index
+  @State var currentIndex: Data.Index
 
   private let direction: (Double) -> Direction?
   private let data: Data
@@ -39,6 +39,10 @@ where Data.Index: Hashable {
         }
       }
     }
+    .onReceive(NotificationCenter.default.publisher(for: Notification.Name.init("ReloadCard")), perform: { _ in
+        self.currentIndex = 0 as! Data.Index
+        ////接收通知回到今天///我自己添加
+    })
   }
 
   private func card(index: Data.Index, relativeIndex: Int) -> some View {

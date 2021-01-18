@@ -11,15 +11,21 @@ struct CalendarList: View {
     
     @Environment(\.presentationMode) var mode
     
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        
-        Button(action: {
-                    self.mode.wrappedValue.dismiss()
-                }, label: {
-                    Text("Dismiss")
-                })
+    @Environment(\.calendar) var calendar
+    
+    private var year: DateInterval {
+        calendar.dateInterval(of: .year, for: Date())!
     }
+    
+    var body: some View {
+        CalendarView(interval: year) { date in
+          Text(String(self.calendar.component(.day, from: date)))
+            .frame(width: 40, height: 40, alignment: .center)
+            .background(Color.blue)
+            .clipShape(Circle())
+            .padding(.vertical, 4)
+        }
+      }
 }
 
 struct CalendarList_Previews: PreviewProvider {
