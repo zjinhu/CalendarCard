@@ -25,7 +25,8 @@ where Data.Index: Hashable {
     self.onSwipe = onSwipe
     self.content = content
 
-    self._currentIndex = State<Data.Index>(initialValue: data.startIndex)
+//    self._currentIndex = State<Data.Index>(initialValue: data.startIndex)
+    self._currentIndex = State<Data.Index>(initialValue: Date().todayCount() as! Data.Index)
   }
 
   public var body: some View {
@@ -39,8 +40,12 @@ where Data.Index: Hashable {
         }
       }
     }
-    .onReceive(NotificationCenter.default.publisher(for: Notification.Name.init("ReloadCard")), perform: { _ in
-        self.currentIndex = 0 as! Data.Index
+    .onReceive(NotificationCenter.default.publisher(for: Notification.Name.init("ReloadCard")), perform: { noti in
+        if let index : Int = noti.object as? Int {
+            self.currentIndex = index as! Data.Index
+        }else{
+            self.currentIndex = Date().todayCount() as! Data.Index
+        }
         ////接收通知回到今天///我自己添加
     })
   }

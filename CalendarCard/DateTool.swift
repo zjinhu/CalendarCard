@@ -38,6 +38,12 @@ extension Date {
         return components.day ?? 0
     }
     
+    func todayCount() -> Int {
+        var components = Calendar.current.dateComponents([.day], from: startOfCurrentYear(), to: self)
+        components.timeZone = TimeZone(secondsFromGMT: 0)
+        return components.day ?? 0
+    }
+    
     func getDateInfo() -> (Int, Int, Int){
         let calendar = Calendar.current
         var comp = calendar.dateComponents([.year, .month, .day], from: self)
@@ -121,7 +127,7 @@ struct Item {
         // So lets get endDate's noon time
         guard let endDate = Formatter.date.date(from: date)?.noon else { return [] }
         // then lets get today's noon time
-        var date = Date().noon
+        var date = Date().startOfCurrentYear()
         var dates: [String] = []
         // while date is less than or equal to endDate
         while date <= endDate {

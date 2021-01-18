@@ -33,3 +33,6 @@ struct CalendarList_Previews: PreviewProvider {
         CalendarList()
     }
 }
+
+
+//NotificationCenter.default.post(name: NSNotification.Name.init("ReloadCard"), object: 2)
