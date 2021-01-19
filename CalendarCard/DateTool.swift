@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftCSV
+import SwiftDate
 extension Formatter {
     static let date: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -19,6 +20,22 @@ extension Formatter {
 }
 
 extension Date {
+    
+    func getWeekStartAndEnd(_ start: Bool = false) -> DateInterval{
+        var date = self
+        if start {
+            date = date + 12.hours
+        }
+        if date.weekday == 1 {
+            date = date - 2.days
+        }
+        let calendar = Calendar.current
+        let week = calendar.dateInterval(of: .weekOfMonth, for: date)!
+        let monday = week.start + 1.days
+        let sunday = week.end + 1.days
+        let interval = DateInterval(start: monday, end: sunday)
+        return interval
+    }
     
     var noon: Date {
         return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
@@ -44,11 +61,25 @@ extension Date {
         return components.day ?? 0
     }
     
+    static func dayCount(selectDate: Date) -> Int {
+        var components = Calendar.current.dateComponents([.day], from: Date().startOfCurrentYear(), to: selectDate)
+        components.timeZone = TimeZone(secondsFromGMT: 0)
+        return components.day ?? 0
+    }
+    
     func getDateInfo() -> (Int, Int, Int){
         let calendar = Calendar.current
         var comp = calendar.dateComponents([.year, .month, .day], from: self)
         comp.timeZone = TimeZone(secondsFromGMT: 0)
         return (comp.year!, comp.month!, comp.day!)
+    }
+    
+    func transDate() -> Date {
+        let calendar = Calendar.current
+        var comp = calendar.dateComponents([.year, .month, .day], from: self)
+        comp.timeZone = TimeZone(secondsFromGMT: 0)
+        let date = calendar.date(from: comp)!
+        return date
     }
     
     //本年开始日期
@@ -223,6 +254,27 @@ struct Item {
             return "SATURDAY"
         case "星期日":
             return "SUNDAY"
+        default:
+            return ""
+        }
+    }
+    
+    static func getWeek(week: Int) -> String{
+        switch week {
+        case 1:
+            return "周一"
+        case 2:
+            return "周二"
+        case 3:
+            return "周三"
+        case 4:
+            return "周四"
+        case 5:
+            return "周五"
+        case 6:
+            return "周六"
+        case 7:
+            return "周日"
         default:
             return ""
         }

@@ -10,23 +10,39 @@ import SwiftUI
 struct ContentView: View {
     @State var data: [String] = Item.loadDate()
     var body: some View {
-
-        CardStack(
-          direction: FourDirections.direction,
-          data: data,
-          onSwipe: { index, direction in
-            print("Swiped to \(index)--\(direction)")
-          },
-          content: { date, _, _ in
-            let d = Item.stringConvertDate(string: date)
-            if let info = Item.getDateInfo(date: d){
-                CardItemView(info: info)
+        ZStack{
+            
+            Button(action: {
+                NotificationCenter.default.post(Notification.init(name: Notification.Name.init("ReloadCard")))
+            }){
+                Text("到最后一天了么?");
             }
-          }
-        )
-        
-    }
+            .font(.title)
+            .padding(.horizontal, 50.0)
+            .background(Color.orange)
+            .foregroundColor(Color.white)
+            .cornerRadius(50).padding(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 50).stroke(Color.orange, lineWidth: 5)
+            )
+            
+            CardStack(
+                direction: FourDirections.direction,
+                data: data,
+                onSwipe: { index, direction in
+                    print("Swiped to \(index)--\(direction)")
+                },
+                content: { date, _, _ in
+                    let d = Item.stringConvertDate(string: date)
+                    if let info = Item.getDateInfo(date: d){
+                        CardItemView(info: info)
+                    }
+                }
+            )
 
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

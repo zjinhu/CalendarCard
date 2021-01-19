@@ -104,16 +104,30 @@ struct CalendarView<DateView>: View where DateView: View {
     }
 
     private func days(for month: Date) -> [Date] {
-        guard
-            let monthInterval = calendar.dateInterval(of: .month, for: month),
-            let monthFirstWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.start),
-            let monthLastWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.end)
-        else { return [] }
+        guard let monthInterval = calendar.dateInterval(of: .month, for: month) else { return [] }
+        let monthFirstWeek = monthInterval.start.getWeekStartAndEnd(true)
+        let monthLastWeek = monthInterval.end.getWeekStartAndEnd()
+
         return calendar.generateDates(
             inside: DateInterval(start: monthFirstWeek.start, end: monthLastWeek.end),
             matching: DateComponents(hour: 0, minute: 0, second: 0)
         )
     }
+    
+//    private func days(for month: Date) -> [Date] {
+//        guard
+//            let monthInterval = calendar.dateInterval(of: .month, for: month),
+//            let monthFirstWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.start),
+//            let monthLastWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.end)
+//        else { return [] }
+//        print("month:\(month)")
+//        print("1:\(monthInterval)/////2:\(monthFirstWeek)/////3:\(monthLastWeek)")
+//        let array = calendar.generateDates(
+//            inside: DateInterval(start: monthFirstWeek.start, end: monthLastWeek.end),
+//            matching: DateComponents(hour: 0, minute: 0, second: 0)
+//        )
+//        return array
+//    }
 }
 
 struct CalendarView_Previews: PreviewProvider {

@@ -8,8 +8,7 @@
 import SwiftUI
 struct CardBar: View {
     let baseColor: Color
-    
-    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
+    @State var isPresented = false
 
     var body: some View {
         HStack{
@@ -29,15 +28,15 @@ struct CardBar: View {
             Spacer()
             
             Button(action: {
-                viewControllerHolder?.present() {
-                    CalendarList()
-                }
+                isPresented.toggle()
             }) {
                 Image("Calendar_Image")
             }
             .padding(20.0)
             .frame(width: 60.0, height: 50.0)
-            
+            .sheet(isPresented: $isPresented) {
+                CalendarList()
+            }
             
         }
         .frame(height: 50.0)
