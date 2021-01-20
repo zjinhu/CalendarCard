@@ -12,6 +12,7 @@
 		816B29CA25B59AA20067C835 /* CalendarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29C925B59AA20067C835 /* CalendarList.swift */; };
 		816B29D425B6B7CF0067C835 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 816B29D325B6B7CF0067C835 /* SwiftDate */; };
 		816B29D725B6C8420067C835 /* CalendarWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29D625B6C8420067C835 /* CalendarWeek.swift */; };
+		816B29DA25B7DE670067C835 /* CalenderDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29D925B7DE670067C835 /* CalenderDay.swift */; };
 		8194D23D25B182CC00D0D33C /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194D23C25B182CC00D0D33C /* CardItem.swift */; };
 		81DEE54025AFF19E00BEA901 /* 2021.csv in Resources */ = {isa = PBXBuildFile; fileRef = 81DEE53D25AFF19E00BEA901 /* 2021.csv */; };
 		81DEE54125AFF19E00BEA901 /* 2022.csv in Resources */ = {isa = PBXBuildFile; fileRef = 81DEE53E25AFF19E00BEA901 /* 2022.csv */; };
@@ -43,6 +44,7 @@
 		816B29C425B59A650067C835 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		816B29C925B59AA20067C835 /* CalendarList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarList.swift; sourceTree = "<group>"; };
 		816B29D625B6C8420067C835 /* CalendarWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeek.swift; sourceTree = "<group>"; };
+		816B29D925B7DE670067C835 /* CalenderDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderDay.swift; sourceTree = "<group>"; };
 		8194D23C25B182CC00D0D33C /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		81DEE53D25AFF19E00BEA901 /* 2021.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2021.csv; sourceTree = "<group>"; };
 		81DEE53E25AFF19E00BEA901 /* 2022.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2022.csv; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				816B29C925B59AA20067C835 /* CalendarList.swift */,
 				816B29C425B59A650067C835 /* CalendarView.swift */,
 				816B29D625B6C8420067C835 /* CalendarWeek.swift */,
+				816B29D925B7DE670067C835 /* CalenderDay.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9161554F25AC0F9E00009C2B /* ContentView.swift in Sources */,
+				816B29DA25B7DE670067C835 /* CalenderDay.swift in Sources */,
 				81DEE56A25B13D6D00BEA901 /* CardHoliday.swift in Sources */,
 				8194D23D25B182CC00D0D33C /* CardItem.swift in Sources */,
 				816B29D725B6C8420067C835 /* CalendarWeek.swift in Sources */,

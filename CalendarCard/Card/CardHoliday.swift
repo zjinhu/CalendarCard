@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardHoliday: View {
-
+    
     let status: Int
     let baseColor: Color
     let day : String
@@ -28,7 +28,7 @@ struct CardHoliday: View {
                             Circle()
                                 .frame(width: 50.0, height: 50.0)
                                 .foregroundColor(status == 3 ? Color("Red_Color") : Color("Green_Color"))
-                                
+                            
                             Text(status == 3 ? "休" : "班")
                                 .font(.system(size: 30))
                                 .fontWeight(.medium)

@@ -27,13 +27,13 @@ struct CardItem: View {
             }
         }
     }
-
+    
     var current: DateInfo?
     
     var status: Int = 0
     
     var body: some View {
-    
+        
         ZStack{
             VStack {
                 

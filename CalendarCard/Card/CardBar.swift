@@ -9,7 +9,7 @@ import SwiftUI
 struct CardBar: View {
     let baseColor: Color
     @State var isPresented = false
-
+    
     var body: some View {
         HStack{
             Button(action: {
@@ -42,7 +42,7 @@ struct CardBar: View {
         .frame(height: 50.0)
         .background(baseColor)
     }
-
+    
 }
 
 struct CardBar_Previews: PreviewProvider {

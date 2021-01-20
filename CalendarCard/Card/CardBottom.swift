@@ -19,9 +19,9 @@ struct CardBottom: View {
             Text("\(info.s年干支)(\(info.s属相))年 农历\(info.s农历月)")
                 .padding(.bottom, 5.0)
                 .foregroundColor(baseColor)
-
+            
             CardFoot(info: info, baseColor: baseColor)
-
+            
             HStack{
                 if !info.s节气.isEmpty{
                     Text(info.s节气)

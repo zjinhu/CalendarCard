@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CalendarList: View {
-//    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
+    //    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
     @Environment(\.presentationMode) var mode
     @Environment(\.calendar) var calendar
     
@@ -17,28 +17,24 @@ struct CalendarList: View {
     }
     
     var body: some View {
-
-            VStack{
-                CalendarWeek()
-                    .frame(height: 40.0)
+        
+        VStack{
+            CalendarWeek()
+                .frame(height: 40.0)
+            
+            CalendarView(interval: year) { date in
                 
-                CalendarView(interval: year) { date in
-                  Text(String(self.calendar.component(.day, from: date)))
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .background(Color.blue)
-                    .clipShape(Circle())
-                    .padding(.vertical, 4)
+                CalenderDay(date: date)
                     .onTapGesture {
-
                         mode.wrappedValue.dismiss()
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                             let count = Date.dayCount(selectDate: date.transDate())
                             NotificationCenter.default.post(name: NSNotification.Name.init("ReloadCard"), object: count)
                         }
                     }
-                }
             }
-            .padding(.horizontal, 10.0)
+        }
+        .padding(.horizontal, 10.0)
         
     }
 }

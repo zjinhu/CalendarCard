@@ -25,7 +25,7 @@ struct FootLeft: View {
             }
             .frame(height: 30.0)
             .background(Color("Bottom_Color"))
-
+            
             ZStack{
                 Text("\(info.s农历月) \(info.s农历日)")
                     .font(Font.system(size: 30))
