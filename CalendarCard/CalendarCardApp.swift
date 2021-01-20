@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import SwiftMesh
 @main
 struct CalendarCardApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -20,7 +20,8 @@ struct CalendarCardApp: App {
 
 class AppDelegate:NSObject,UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        print("launch")
+        MeshManager.shared.canLogging = true
+        Request.shared.getHoliday(Date().getYear())
         return true
     }
 }

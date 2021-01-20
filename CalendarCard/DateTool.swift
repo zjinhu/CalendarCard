@@ -41,6 +41,22 @@ extension Date {
         return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
     }
     
+    func getYear() -> String{
+        let formater = DateFormatter()
+        formater.locale = Locale(identifier: "zh_CN")
+        formater.timeZone = TimeZone(secondsFromGMT: 0)
+        formater.dateFormat = "yyyy"
+        return formater.string(from: self)
+    }
+    
+    func getHolidayKey() -> String{
+        let formater = DateFormatter()
+        formater.locale = Locale(identifier: "zh_CN")
+        formater.timeZone = TimeZone(secondsFromGMT: 0)
+        formater.dateFormat = "MM-dd"
+        return formater.string(from: self)
+    }
+    
     func toString() -> String{
         let formater = DateFormatter()
         formater.locale = Locale(identifier: "zh_CN")

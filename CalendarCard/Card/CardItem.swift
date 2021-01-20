@@ -8,45 +8,50 @@
 import SwiftUI
 
 struct CardItem: View {
-    @ObservedObject var request: Request = Request()
-
-    init(info: DateInfo) {
-        
-        let y = info.s公历月 > 9 ? "\(info.s公历月)" : "0\(info.s公历月)"
-        let r = info.s公历日 > 9 ? "\(info.s公历日)" : "0\(info.s公历日)"
-        
-        request.getHoliday("\(info.s公历年)-\(y)-\(r)")
-        
+    
+    init(info: DateInfo, holiday: Holiday?) {
         current = info
+        
+        switch info.s星期 {
+        case "星期六", "星期日":
+            status = 1
+        default:
+            status = 0
+        }
+        
+        if let h = holiday {
+            if h.holiday == true {
+                status = 3
+            }else{
+                status = 2
+            }
+        }
     }
-    
-    var baseColor: Color = .green
-    
+
     var current: DateInfo?
     
+    var status: Int = 0
+    
     var body: some View {
-        
+    
         ZStack{
             VStack {
                 
-                if let info = current{
-                    
-                    CardBar(baseColor: request.holiday?.type?.type == 1 || request.holiday?.type?.type == 2 ? Color("Red_Color") : Color("Green_Color"))
-                    
-                    CardHead(info: info, baseColor: request.holiday?.type?.type == 1 || request.holiday?.type?.type == 2 ? Color("Red_Color") : Color("Green_Color"))
-                        .padding([.top, .leading, .trailing])
-                    
-                    Spacer()
-                    
-                    CardHoliday(holiday: request.holiday?.holiday, baseColor: request.holiday?.type?.type == 1 || request.holiday?.type?.type == 2 ? Color("Red_Color") : Color("Green_Color"), day: "\(info.s公历日)")
-                    
-                    Spacer()
-                    
-                    CardBottom(info: info, baseColor: request.holiday?.type?.type == 1 || request.holiday?.type?.type == 2 ? Color("Red_Color") : Color("Green_Color"))
-                        .padding([.leading, .bottom, .trailing], 10.0)
-                }
-
+                CardBar(baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"))
+                
+                CardHead(info: current!, baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"))
+                    .padding([.top, .leading, .trailing])
+                
+                Spacer()
+                
+                CardHoliday(status: status, baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"), day: "\(current!.s公历日)")
+                
+                Spacer()
+                
+                CardBottom(info: current!, baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"))
+                    .padding([.leading, .bottom, .trailing], 10.0)
             }
+            
         }
     }
 }
@@ -71,6 +76,6 @@ struct CardItem_Previews: PreviewProvider {
                                 s公历节日: "",
                                 s农历节日: "腊八节",
                                 s特殊节日: "",
-                                s数九数伏: "四九第四天"))
+                                s数九数伏: "四九第四天"), holiday: Holiday())
     }
 }

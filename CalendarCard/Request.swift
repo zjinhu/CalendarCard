@@ -14,40 +14,40 @@ import SwiftMesh
 ///@params $date: 指定日期的字符串，格式 ‘2018-02-23’。可以省略，则默认服务器的当前时间。
 ///@return json: 如果不是节假日，holiday字段为null。
 
-class Request: ObservableObject {
+class Request {
+    public static var shared : Request = Request()
     
-    @Published var holiday: HolidayResult?
+    var holiday: [String: [String : Any]]?
 
     func getHoliday(_ date: String) {
         MeshManager.shared.requestWithConfig { (config) in
-            config.URLString = "https://timor.tech/api/holiday/info/" + date
+            config.URLString = "https://timor.tech/api/holiday/year/\(date)/"
             config.requestMethod = .get
         } success: { (config) in
-            let decoder = JSONDecoder()
-            guard let data = config.responseData, let model = try? decoder.decode(HolidayResult.self, from: data) else {
+
+            guard let data : [String: Any] = config.response?.value as? [String : Any] else {
                 return
             }
-            DispatchQueue.main.async {
-                // 更新我们的UI
-                self.holiday = model
-            }
+            self.holiday = data["holiday"] as? [String : [String : Any]]
+            
         } failure: { (_) in
             print("error getHoliday")
         }
     }
 
-}
-
-struct HolidayResult: Codable  {
-    var holiday: Holiday?
-    var type: HolidayType?
-    var code : Int?
-}
-
-struct HolidayType: Codable  {
-    var type: Int?
-    var name : String?
-    var week : Int?
+    func getInfo(_ date: String) -> Holiday?{
+        guard let dic = holiday  else {
+            return nil
+        }
+        for e in dic {
+            if e.key == date {
+                let data = try! JSONSerialization.data(withJSONObject: e.value, options: [])
+                let holiday = try? JSONDecoder().decode(Holiday.self, from: data)
+                return holiday
+            }
+        }
+        return nil
+    }
 }
 
 struct Holiday: Codable {

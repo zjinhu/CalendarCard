@@ -34,8 +34,11 @@ struct ContentView: View {
                 },
                 content: { date, _, _ in
                     let d = Item.stringConvertDate(string: date)
+                    
+                    let holiday = Request.shared.getInfo(d.getHolidayKey())
+
                     if let info = Item.getDateInfo(date: d){
-                        CardItemView(info: info)
+                        CardItemView(info: info, holiday: holiday)
                     }
                 }
             )

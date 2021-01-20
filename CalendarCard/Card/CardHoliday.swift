@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardHoliday: View {
 
-    let holiday: Holiday?
+    let status: Int
     let baseColor: Color
     let day : String
     
@@ -20,16 +20,16 @@ struct CardHoliday: View {
                 .fontWeight(.bold)
                 .foregroundColor(baseColor)
             
-            if let h = holiday{
+            if status > 1{
                 VStack{
                     HStack{
                         Spacer()
                         ZStack{
                             Circle()
                                 .frame(width: 50.0, height: 50.0)
-                                .foregroundColor(h.holiday ?? false ? .green : .red)
+                                .foregroundColor(status == 3 ? Color("Red_Color") : Color("Green_Color"))
                                 
-                            Text(h.holiday ?? false ? "休" : "班")
+                            Text(status == 3 ? "休" : "班")
                                 .font(.system(size: 30))
                                 .fontWeight(.medium)
                                 .padding(.all, 20.0)
@@ -48,6 +48,6 @@ struct CardHoliday: View {
 
 struct CardHoliday_Previews: PreviewProvider {
     static var previews: some View {
-        CardHoliday(holiday: Holiday(), baseColor: .green, day: "20")
+        CardHoliday(status: 0, baseColor: .green, day: "20")
     }
 }

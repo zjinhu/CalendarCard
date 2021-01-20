@@ -9,12 +9,12 @@ import SwiftUI
 
 struct CardItemView: View {
     
-
     let info: DateInfo
-
+    let holiday: Holiday?
+    
     var body: some View {
         GeometryReader { geo in
-            CardItem(info: info)
+            CardItem(info: info, holiday: holiday)
         }
         .background(Color("BG_Color"))
         .cornerRadius(12)
@@ -44,7 +44,7 @@ struct CardItemView_Previews: PreviewProvider {
                                     s公历节日: "",
                                     s农历节日: "腊八节",
                                     s特殊节日: "",
-                                    s数九数伏: "四九第四天"))
+                                    s数九数伏: "四九第四天"), holiday: Holiday())
     }
 }
 
