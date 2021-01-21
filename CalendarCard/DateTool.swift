@@ -11,9 +11,8 @@ import SwiftDate
 extension Formatter {
     static let date: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .iso8601)
+        dateFormatter.calendar = Calendar.current
         dateFormatter.locale = Locale(identifier: "zh_CN")
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter
     }()
@@ -44,7 +43,6 @@ extension Date {
     func getYear() -> String{
         let formater = DateFormatter()
         formater.locale = Locale(identifier: "zh_CN")
-        formater.timeZone = TimeZone(secondsFromGMT: 0)
         formater.dateFormat = "yyyy"
         return formater.string(from: self)
     }
@@ -52,7 +50,6 @@ extension Date {
     func getHolidayKey() -> String{
         let formater = DateFormatter()
         formater.locale = Locale(identifier: "zh_CN")
-        formater.timeZone = TimeZone(secondsFromGMT: 0)
         formater.dateFormat = "MM-dd"
         return formater.string(from: self)
     }
@@ -60,40 +57,34 @@ extension Date {
     func toString() -> String{
         let formater = DateFormatter()
         formater.locale = Locale(identifier: "zh_CN")
-        formater.timeZone = TimeZone(secondsFromGMT: 0)
         formater.dateFormat = "yyyy-MM-dd"
         return formater.string(from: self)
     }
     
     func daysBetweenDate(toDate: Date) -> Int {
-        var components = Calendar.current.dateComponents([.day], from: toDate, to: self)
-        components.timeZone = TimeZone(secondsFromGMT: 0)
+        let components = Calendar.current.dateComponents([.day], from: toDate, to: self)
         return components.day ?? 0
     }
     
     func todayCount() -> Int {
-        var components = Calendar.current.dateComponents([.day], from: startOfCurrentYear(), to: self)
-        components.timeZone = TimeZone(secondsFromGMT: 0)
+        let components = Calendar.current.dateComponents([.day], from: startOfCurrentYear(), to: self)
         return components.day ?? 0
     }
     
     static func dayCount(selectDate: Date) -> Int {
-        var components = Calendar.current.dateComponents([.day], from: Date().startOfCurrentYear(), to: selectDate)
-        components.timeZone = TimeZone(secondsFromGMT: 0)
+        let components = Calendar.current.dateComponents([.day], from: Date().startOfCurrentYear(), to: selectDate)
         return components.day ?? 0
     }
     
     func getDateInfo() -> (Int, Int, Int){
         let calendar = Calendar.current
-        var comp = calendar.dateComponents([.year, .month, .day], from: self)
-        comp.timeZone = TimeZone(secondsFromGMT: 0)
+        let comp = calendar.dateComponents([.year, .month, .day], from: self)
         return (comp.year!, comp.month!, comp.day!)
     }
     
     func transDate() -> Date {
         let calendar = Calendar.current
-        var comp = calendar.dateComponents([.year, .month, .day], from: self)
-        comp.timeZone = TimeZone(secondsFromGMT: 0)
+        let comp = calendar.dateComponents([.year, .month, .day], from: self)
         let date = calendar.date(from: comp)!
         return date
     }
@@ -102,7 +93,6 @@ extension Date {
     func startOfCurrentYear() -> Date {
         let calendar = Calendar.current
         var components = calendar.dateComponents(Set<Calendar.Component>([.year]), from: self)
-        components.timeZone = TimeZone(secondsFromGMT: 0)
         let startOfYear = calendar.date(from: components)!
         return startOfYear
     }
@@ -111,7 +101,6 @@ extension Date {
     func endOfCurrentYear(returnEndTime: Bool = false) -> Date {
         let calendar = Calendar.current
         var components = DateComponents()
-        components.timeZone = TimeZone(secondsFromGMT: 0)
         components.year = 1
         if returnEndTime {
             components.second = -1
@@ -127,7 +116,6 @@ extension Date {
     func startOfMonth(year: Int, month: Int) -> Date {
         let calendar = Calendar.current
         var startComps = DateComponents()
-        startComps.timeZone = TimeZone(secondsFromGMT: 0)
         startComps.day = 1
         startComps.month = month
         startComps.year = year
@@ -139,7 +127,6 @@ extension Date {
     func endOfMonth(year: Int, month: Int, returnEndTime: Bool = false) -> Date {
         let calendar = Calendar.current
         var components = DateComponents()
-        components.timeZone = TimeZone(secondsFromGMT: 0)
         components.month = 1
         if returnEndTime {
             components.second = -1
@@ -159,7 +146,6 @@ struct Item {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.locale = Locale(identifier: "zh_CN")
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         let date = dateFormatter.date(from: string)
         return date!
     }

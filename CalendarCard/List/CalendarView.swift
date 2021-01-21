@@ -27,7 +27,7 @@ struct CalendarView<DateView>: View where DateView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             ScrollViewReader { (proxy: ScrollViewProxy) in
-                LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
+                LazyVGrid(columns: Array(repeating: GridItem(spacing: 2, alignment: .center), count: 7)) {
                     ForEach(months, id: \.self) { month in
                         Section(header: header(for: month)) {
                             ForEach(days(for: month), id: \.self) { date in
@@ -121,13 +121,13 @@ struct CalendarView_Previews: PreviewProvider {
 fileprivate extension DateFormatter {
     static var month: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM"
+        formatter.dateFormat = "M月"
         return formatter
     }
     
     static var monthAndYear: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM yyyy"
+        formatter.dateFormat = "yyyy年M月"
         return formatter
     }
 }
