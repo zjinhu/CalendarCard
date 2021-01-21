@@ -11,7 +11,7 @@ struct CardItem: View {
     
     init(info: DateInfo, holiday: Holiday?) {
         current = info
-        
+        currentHoliday = holiday
         switch info.s星期 {
         case "星期六", "星期日":
             status = 1
@@ -29,6 +29,7 @@ struct CardItem: View {
     }
     
     var current: DateInfo?
+    var currentHoliday: Holiday?
     
     var status: Int = 0
     
@@ -39,16 +40,21 @@ struct CardItem: View {
                 
                 CardBar(baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"))
                 
-                CardHead(info: current!, baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"))
+                CardHead(info: current!,
+                         baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"))
                     .padding([.top, .leading, .trailing])
                 
                 Spacer()
                 
-                CardHoliday(status: status, baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"), day: "\(current!.s公历日)")
+                CardHoliday(info: current!,
+                            baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"),
+                            day: "\(current!.s公历日)",
+                            holiday: currentHoliday) 
                 
                 Spacer()
                 
-                CardBottom(info: current!, baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"))
+                CardBottom(info: current!,
+                           baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"))
                     .padding([.leading, .bottom, .trailing], 10.0)
             }
             

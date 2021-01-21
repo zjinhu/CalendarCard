@@ -92,7 +92,7 @@ extension Date {
     //本年开始日期
     func startOfCurrentYear() -> Date {
         let calendar = Calendar.current
-        var components = calendar.dateComponents(Set<Calendar.Component>([.year]), from: self)
+        let components = calendar.dateComponents(Set<Calendar.Component>([.year]), from: self)
         let startOfYear = calendar.date(from: components)!
         return startOfYear
     }

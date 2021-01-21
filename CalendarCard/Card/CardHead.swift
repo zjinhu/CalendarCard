@@ -11,54 +11,30 @@ struct CardHead: View {
     let info: DateInfo
     let baseColor: Color
     var body: some View {
-        VStack{
-            HStack{
-                Text(String(info.s公历年))
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .padding(.leading, 10.0)
-                    .foregroundColor(baseColor)
-                Spacer()
-                Text(Item.getMonth(index: info.s公历月))
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(baseColor)
-                Spacer()
-                Text("\(info.s公历月)月")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .padding(.trailing, 10.0)
-                    .foregroundColor(baseColor)
-            }
-            .padding(.all, 10.0)
-            .frame(height: 50.0)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(baseColor, lineWidth: 4)
-            )
-            
-            HStack{
-                if !info.s公历节日.isEmpty{
-                    Text(info.s公历节日)
-                        .font(Font.system(size: 20))
-                        .fontWeight(.bold)
-                        .foregroundColor(baseColor)
-                }
-                if !info.s农历节日.isEmpty{
-                    Text(info.s农历节日)
-                        .font(Font.system(size: 20))
-                        .fontWeight(.bold)
-                        .foregroundColor(baseColor)
-                }
-                if !info.s特殊节日.isEmpty{
-                    Text(info.s特殊节日)
-                        .font(Font.system(size: 20))
-                        .fontWeight(.bold)
-                        .foregroundColor(baseColor)
-                }
-            }
-            .padding(.top, 30.0)
+        HStack{
+            Text(String(info.s公历年))
+                .font(.title)
+                .fontWeight(.semibold)
+                .padding(.leading, 10.0)
+                .foregroundColor(baseColor)
+            Spacer()
+            Text(Item.getMonth(index: info.s公历月))
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(baseColor)
+            Spacer()
+            Text("\(info.s公历月)月")
+                .font(.title)
+                .fontWeight(.semibold)
+                .padding(.trailing, 10.0)
+                .foregroundColor(baseColor)
         }
+        .padding(.all, 10.0)
+        .frame(height: 50.0)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(baseColor, lineWidth: 4)
+        )
     }
 }
 

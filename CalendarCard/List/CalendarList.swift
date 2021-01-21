@@ -19,16 +19,15 @@ struct CalendarList: View {
     
     var body: some View {
         
-        VStack{
+        VStack(alignment: .center, spacing: 0, content: {
             CalendarWeek()
-                .frame(height: 40.0)
+                .frame(height: 30.0)
             
             CalendarView(interval: year) { date in
-                
                 CalenderDay(day: getDay(date: date),
                             lunar: getInfo(date: date),
                             status: getHoliday(date: date),
-                            isToday: date.isToday)
+                            isToday: calendar.isDateInToday(date))
                     .onTapGesture {
                         mode.wrappedValue.dismiss()
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -37,8 +36,8 @@ struct CalendarList: View {
                         }
                     }
             }
-        }
-        .padding([.leading, .bottom, .trailing], 10.0)
+        })
+        .padding([.leading, .trailing], 10.0)
         
     }
     
@@ -51,8 +50,8 @@ struct CalendarList: View {
                                           "8-15":"中秋",
                                           "9-9":"重阳",
                                           "12-8":"腊八",
-                                          "12-23":"北方小年",
-                                          "12-24":"南方小年",
+                                          "12-23":"小年(北)",
+                                          "12-24":"小年(南)",
                                           "12-30":"除夕"]
     
     let gregorianHoliDay:[String:String] = ["1-1":"元旦",

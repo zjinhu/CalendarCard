@@ -15,16 +15,14 @@ struct ContentView: View {
             Button(action: {
                 NotificationCenter.default.post(Notification.init(name: Notification.Name.init("ReloadCard")))
             }){
-                Text("到最后一天了么?");
+                Text("回到今天");
             }
+            .frame(height: 80.0)
             .font(.title)
             .padding(.horizontal, 50.0)
-            .background(Color.orange)
+            .background(Color("Green_Color"))
             .foregroundColor(Color.white)
-            .cornerRadius(50).padding(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 50).stroke(Color.orange, lineWidth: 5)
-            )
+            .clipShape(Capsule())
             
             CardStack(
                 direction: FourDirections.direction,
@@ -34,7 +32,7 @@ struct ContentView: View {
                 },
                 content: { date, _, _ in
                     let d = Item.stringConvertDate(string: date)
-                    
+
                     let holiday = Request.shared.getInfo(d.getHolidayKey())
 
                     if let info = Item.getDateInfo(date: d){

@@ -51,7 +51,7 @@ class Request {
 }
 
 struct Holiday: Codable {
-    var holiday: Bool?
+    var holiday: Bool = false
     var name : String?
     var wage : Int?
     var after: Bool?

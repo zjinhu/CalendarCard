@@ -21,13 +21,16 @@ struct CalenderDay: View {
                 Text(day)
                     .frame(width: 40, height: 40, alignment: .center)
                     .font(.title)
-                    .foregroundColor(status > 0 ? Color("Red_Color") : .black)
+                    .foregroundColor(status > 0 ? Color("Red_Color") : Color("Day_Color"))
                 
                 
                 Text(lunar)
                     .font(.footnote)
                     .foregroundColor(status > 0 ? Color("Red_Color") : .gray)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: true, vertical: false)
             }
+            .padding(.bottom, 5.0)
             .overlay(
                 RoundedRectangle(cornerRadius: 5).stroke( isToday ? Color.orange : Color.clear, lineWidth: 2)
             )
@@ -53,15 +56,13 @@ struct CalenderDay: View {
             }
             
         }
-        .padding(.vertical, 4.0)
         
     }
-    
     
 }
 
 struct CalenderDay_Previews: PreviewProvider {
     static var previews: some View {
-        CalenderDay(day: "15", lunar: "腊八", status: 4, isToday: true)
+        CalenderDay(day: "15", lunar: "腊八腊八", status: 4, isToday: true)
     }
 }
