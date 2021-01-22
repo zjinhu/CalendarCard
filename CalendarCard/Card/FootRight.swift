@@ -14,7 +14,7 @@ struct FootRight: View {
         VStack {
             HStack {
                 Spacer()
-                Text(Item.getWeek(week: info.s星期))
+                Text(LunarTool.getWeek(week: info.s星期))
                     .font(.system(size: 16))
                     .foregroundColor(baseColor)
                 Spacer()

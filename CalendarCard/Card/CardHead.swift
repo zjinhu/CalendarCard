@@ -18,7 +18,7 @@ struct CardHead: View {
                 .padding(.leading, 10.0)
                 .foregroundColor(baseColor)
             Spacer()
-            Text(Item.getMonth(index: info.s公历月))
+            Text(LunarTool.getMonth(index: info.s公历月))
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(baseColor)

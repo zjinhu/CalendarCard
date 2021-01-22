@@ -20,7 +20,6 @@ struct CalendarCardApp: App {
 
 class AppDelegate:NSObject,UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        MeshManager.shared.canLogging = true
         Request.shared.getHoliday(Date().getYear())
         return true
     }

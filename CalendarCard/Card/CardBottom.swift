@@ -13,7 +13,7 @@ struct CardBottom: View {
     var body: some View {
         VStack{
 
-            Image(Item.getImageName(name: info.s属相))
+            Image(LunarTool.getImageName(name: info.s属相))
                 .renderingMode(.template)
                 .background(Color("BG_Color"))
                 .foregroundColor(baseColor)
@@ -23,7 +23,7 @@ struct CardBottom: View {
             
             
            CardHuangli(baseColor: baseColor,
-                       suitAndAvoid: Item.suitAndAvoid(month: info.s农历月, rizhi: info.s日干支))
+                       suitAndAvoid: SuitAvoid.suitAndAvoid(month: info.s农历月, rizhi: info.s日干支))
             .padding(.vertical, 5.0)
             
             CardFoot(info: info, baseColor: baseColor)

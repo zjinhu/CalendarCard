@@ -10,11 +10,24 @@
 		816B29B425B536730067C835 /* CardBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29B325B536730067C835 /* CardBar.swift */; };
 		816B29C625B59A650067C835 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29C425B59A650067C835 /* CalendarView.swift */; };
 		816B29CA25B59AA20067C835 /* CalendarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29C925B59AA20067C835 /* CalendarList.swift */; };
-		816B29D425B6B7CF0067C835 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 816B29D325B6B7CF0067C835 /* SwiftDate */; };
 		816B29D725B6C8420067C835 /* CalendarWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29D625B6C8420067C835 /* CalendarWeek.swift */; };
 		816B29DA25B7DE670067C835 /* CalenderDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29D925B7DE670067C835 /* CalenderDay.swift */; };
 		816B2A2C25BA86640067C835 /* SuitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A2B25BA86640067C835 /* SuitItem.swift */; };
 		816B2A2F25BA87AD0067C835 /* CardHuangli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A2E25BA87AD0067C835 /* CardHuangli.swift */; };
+		816B2A3D25BABAEF0067C835 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816B2A3C25BABAEF0067C835 /* WidgetKit.framework */; };
+		816B2A3F25BABAEF0067C835 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816B2A3E25BABAEF0067C835 /* SwiftUI.framework */; };
+		816B2A4225BABAEF0067C835 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A4125BABAEF0067C835 /* Today.swift */; };
+		816B2A4425BABAF10067C835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816B2A4325BABAF10067C835 /* Assets.xcassets */; };
+		816B2A4825BABAF10067C835 /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 816B2A3A25BABAEF0067C835 /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		816B2A5125BABF360067C835 /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A5025BABF360067C835 /* SmallWidget.swift */; };
+		816B2A5525BABF420067C835 /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A5425BABF420067C835 /* MediumWidget.swift */; };
+		816B2A5925BABF550067C835 /* LargeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A5825BABF550067C835 /* LargeWidget.swift */; };
+		816B2A5D25BABFD90067C835 /* LunarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A5C25BABFD90067C835 /* LunarTool.swift */; };
+		816B2A6425BAC2200067C835 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A6325BAC2200067C835 /* Request.swift */; };
+		816B2A6525BAC2200067C835 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A6325BAC2200067C835 /* Request.swift */; };
+		816B2A6B25BAC2DD0067C835 /* SwiftMesh in Frameworks */ = {isa = PBXBuildFile; productRef = 816B2A6A25BAC2DD0067C835 /* SwiftMesh */; };
+		816B2A7125BAD6B60067C835 /* PublicUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A7025BAD6B60067C835 /* PublicUtil.swift */; };
+		816B2A7225BAD6B60067C835 /* PublicUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A7025BAD6B60067C835 /* PublicUtil.swift */; };
 		8194D23D25B182CC00D0D33C /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194D23C25B182CC00D0D33C /* CardItem.swift */; };
 		81DEE54025AFF19E00BEA901 /* 2021.csv in Resources */ = {isa = PBXBuildFile; fileRef = 81DEE53D25AFF19E00BEA901 /* 2021.csv */; };
 		81DEE54125AFF19E00BEA901 /* 2022.csv in Resources */ = {isa = PBXBuildFile; fileRef = 81DEE53E25AFF19E00BEA901 /* 2022.csv */; };
@@ -25,7 +38,6 @@
 		81DEE55D25B0397F00BEA901 /* FootRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEE55C25B0397F00BEA901 /* FootRight.swift */; };
 		81DEE56025B04DE100BEA901 /* CardBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEE55F25B04DE100BEA901 /* CardBottom.swift */; };
 		81DEE56425B05B3300BEA901 /* SwiftMesh in Frameworks */ = {isa = PBXBuildFile; productRef = 81DEE56325B05B3300BEA901 /* SwiftMesh */; };
-		81DEE56725B05B6D00BEA901 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEE56625B05B6D00BEA901 /* Request.swift */; };
 		81DEE56A25B13D6D00BEA901 /* CardHoliday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEE56925B13D6D00BEA901 /* CardHoliday.swift */; };
 		9161554D25AC0F9E00009C2B /* CalendarCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9161554C25AC0F9E00009C2B /* CalendarCardApp.swift */; };
 		9161554F25AC0F9E00009C2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9161554E25AC0F9E00009C2B /* ContentView.swift */; };
@@ -41,6 +53,30 @@
 		91BF24A725ADA65D00DD34A4 /* CardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF24A625ADA65D00DD34A4 /* CardItemView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		816B2A4625BABAF10067C835 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9161554125AC0F9E00009C2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 816B2A3925BABAEF0067C835;
+			remoteInfo = TodayExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		816B2A4D25BABAF20067C835 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				816B2A4825BABAF10067C835 /* TodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		816B29B325B536730067C835 /* CardBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBar.swift; sourceTree = "<group>"; };
 		816B29C425B59A650067C835 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -49,6 +85,19 @@
 		816B29D925B7DE670067C835 /* CalenderDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderDay.swift; sourceTree = "<group>"; };
 		816B2A2B25BA86640067C835 /* SuitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitItem.swift; sourceTree = "<group>"; };
 		816B2A2E25BA87AD0067C835 /* CardHuangli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHuangli.swift; sourceTree = "<group>"; };
+		816B2A3A25BABAEF0067C835 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		816B2A3C25BABAEF0067C835 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		816B2A3E25BABAEF0067C835 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		816B2A4125BABAEF0067C835 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
+		816B2A4325BABAF10067C835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		816B2A4525BABAF10067C835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816B2A4925BABAF20067C835 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
+		816B2A5025BABF360067C835 /* SmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget.swift; sourceTree = "<group>"; };
+		816B2A5425BABF420067C835 /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
+		816B2A5825BABF550067C835 /* LargeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidget.swift; sourceTree = "<group>"; };
+		816B2A5C25BABFD90067C835 /* LunarTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarTool.swift; sourceTree = "<group>"; };
+		816B2A6325BAC2200067C835 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		816B2A7025BAD6B60067C835 /* PublicUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicUtil.swift; sourceTree = "<group>"; };
 		8194D23C25B182CC00D0D33C /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		81DEE53D25AFF19E00BEA901 /* 2021.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2021.csv; sourceTree = "<group>"; };
 		81DEE53E25AFF19E00BEA901 /* 2022.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2022.csv; sourceTree = "<group>"; };
@@ -58,7 +107,6 @@
 		81DEE55925B0397100BEA901 /* FootLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootLeft.swift; sourceTree = "<group>"; };
 		81DEE55C25B0397F00BEA901 /* FootRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootRight.swift; sourceTree = "<group>"; };
 		81DEE55F25B04DE100BEA901 /* CardBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBottom.swift; sourceTree = "<group>"; };
-		81DEE56625B05B6D00BEA901 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		81DEE56925B13D6D00BEA901 /* CardHoliday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHoliday.swift; sourceTree = "<group>"; };
 		9161554925AC0F9E00009C2B /* CalendarCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9161554C25AC0F9E00009C2B /* CalendarCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCardApp.swift; sourceTree = "<group>"; };
@@ -76,13 +124,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		816B2A3725BABAEF0067C835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				816B2A3F25BABAEF0067C835 /* SwiftUI.framework in Frameworks */,
+				816B2A3D25BABAEF0067C835 /* WidgetKit.framework in Frameworks */,
+				816B2A6B25BAC2DD0067C835 /* SwiftMesh in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9161554625AC0F9E00009C2B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				91BF249E25ADA55D00DD34A4 /* SwiftCSV in Frameworks */,
 				81DEE56425B05B3300BEA901 /* SwiftMesh in Frameworks */,
-				816B29D425B6B7CF0067C835 /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +155,39 @@
 				816B29D925B7DE670067C835 /* CalenderDay.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		816B2A3B25BABAEF0067C835 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				816B2A3C25BABAEF0067C835 /* WidgetKit.framework */,
+				816B2A3E25BABAEF0067C835 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		816B2A4025BABAEF0067C835 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				816B2A4125BABAEF0067C835 /* Today.swift */,
+				816B2A5025BABF360067C835 /* SmallWidget.swift */,
+				816B2A5425BABF420067C835 /* MediumWidget.swift */,
+				816B2A5825BABF550067C835 /* LargeWidget.swift */,
+				816B2A4325BABAF10067C835 /* Assets.xcassets */,
+				816B2A4525BABAF10067C835 /* Info.plist */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		816B2A7525BAD70B0067C835 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				816B2A6325BAC2200067C835 /* Request.swift */,
+				91BF24A325ADA5E500DD34A4 /* DateTool.swift */,
+				816B2A5C25BABFD90067C835 /* LunarTool.swift */,
+				816B2A7025BAD6B60067C835 /* PublicUtil.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 		8194D24025B18FA700D0D33C /* Card */ = {
@@ -120,7 +210,10 @@
 		9161554025AC0F9E00009C2B = {
 			isa = PBXGroup;
 			children = (
+				816B2A4925BABAF20067C835 /* TodayExtension.entitlements */,
 				9161554B25AC0F9E00009C2B /* CalendarCard */,
+				816B2A4025BABAEF0067C835 /* Today */,
+				816B2A3B25BABAEF0067C835 /* Frameworks */,
 				9161554A25AC0F9E00009C2B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				9161554925AC0F9E00009C2B /* CalendarCard.app */,
+				816B2A3A25BABAEF0067C835 /* TodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,12 +233,11 @@
 				9161554C25AC0F9E00009C2B /* CalendarCardApp.swift */,
 				9161554E25AC0F9E00009C2B /* ContentView.swift */,
 				91BF24A625ADA65D00DD34A4 /* CardItemView.swift */,
-				91BF24A325ADA5E500DD34A4 /* DateTool.swift */,
-				81DEE56625B05B6D00BEA901 /* Request.swift */,
 				91BF24A025ADA5A300DD34A4 /* wnl.csv */,
 				81DEE53F25AFF19E00BEA901 /* 2020.csv */,
 				81DEE53D25AFF19E00BEA901 /* 2021.csv */,
 				81DEE53E25AFF19E00BEA901 /* 2022.csv */,
+				816B2A7525BAD70B0067C835 /* Date */,
 				816B29C225B59A650067C835 /* List */,
 				91BF249225AD6C7200DD34A4 /* CardStack */,
 				8194D24025B18FA700D0D33C /* Card */,
@@ -177,6 +270,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		816B2A3925BABAEF0067C835 /* TodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 816B2A4A25BABAF20067C835 /* Build configuration list for PBXNativeTarget "TodayExtension" */;
+			buildPhases = (
+				816B2A3625BABAEF0067C835 /* Sources */,
+				816B2A3725BABAEF0067C835 /* Frameworks */,
+				816B2A3825BABAEF0067C835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayExtension;
+			packageProductDependencies = (
+				816B2A6A25BAC2DD0067C835 /* SwiftMesh */,
+			);
+			productName = TodayExtension;
+			productReference = 816B2A3A25BABAEF0067C835 /* TodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		9161554825AC0F9E00009C2B /* CalendarCard */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9161555825AC0FA000009C2B /* Build configuration list for PBXNativeTarget "CalendarCard" */;
@@ -184,16 +297,17 @@
 				9161554525AC0F9E00009C2B /* Sources */,
 				9161554625AC0F9E00009C2B /* Frameworks */,
 				9161554725AC0F9E00009C2B /* Resources */,
+				816B2A4D25BABAF20067C835 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				816B2A4725BABAF10067C835 /* PBXTargetDependency */,
 			);
 			name = CalendarCard;
 			packageProductDependencies = (
 				91BF249D25ADA55D00DD34A4 /* SwiftCSV */,
 				81DEE56325B05B3300BEA901 /* SwiftMesh */,
-				816B29D325B6B7CF0067C835 /* SwiftDate */,
 			);
 			productName = CalendarCard;
 			productReference = 9161554925AC0F9E00009C2B /* CalendarCard.app */;
@@ -208,6 +322,9 @@
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					816B2A3925BABAEF0067C835 = {
+						CreatedOnToolsVersion = 12.3;
+					};
 					9161554825AC0F9E00009C2B = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -225,18 +342,26 @@
 			packageReferences = (
 				91BF249C25ADA55D00DD34A4 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
 				81DEE56225B05B3300BEA901 /* XCRemoteSwiftPackageReference "SwiftMesh" */,
-				816B29D225B6B7CF0067C835 /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = 9161554A25AC0F9E00009C2B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9161554825AC0F9E00009C2B /* CalendarCard */,
+				816B2A3925BABAEF0067C835 /* TodayExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		816B2A3825BABAEF0067C835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				816B2A4425BABAF10067C835 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9161554725AC0F9E00009C2B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,11 +378,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		816B2A3625BABAEF0067C835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				816B2A5525BABF420067C835 /* MediumWidget.swift in Sources */,
+				816B2A6525BAC2200067C835 /* Request.swift in Sources */,
+				816B2A4225BABAEF0067C835 /* Today.swift in Sources */,
+				816B2A5125BABF360067C835 /* SmallWidget.swift in Sources */,
+				816B2A5925BABF550067C835 /* LargeWidget.swift in Sources */,
+				816B2A7225BAD6B60067C835 /* PublicUtil.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9161554525AC0F9E00009C2B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9161554F25AC0F9E00009C2B /* ContentView.swift in Sources */,
+				816B2A6425BAC2200067C835 /* Request.swift in Sources */,
 				816B2A2F25BA87AD0067C835 /* CardHuangli.swift in Sources */,
 				816B29DA25B7DE670067C835 /* CalenderDay.swift in Sources */,
 				81DEE56A25B13D6D00BEA901 /* CardHoliday.swift in Sources */,
@@ -267,6 +406,7 @@
 				91BF24A725ADA65D00DD34A4 /* CardItemView.swift in Sources */,
 				9161554D25AC0F9E00009C2B /* CalendarCardApp.swift in Sources */,
 				816B29B425B536730067C835 /* CardBar.swift in Sources */,
+				816B2A5D25BABFD90067C835 /* LunarTool.swift in Sources */,
 				81DEE55725B037B100BEA901 /* CardFoot.swift in Sources */,
 				81DEE55D25B0397F00BEA901 /* FootRight.swift in Sources */,
 				91BF249825AD6C7200DD34A4 /* CardView.swift in Sources */,
@@ -274,10 +414,10 @@
 				81DEE55425B02E9D00BEA901 /* CardHead.swift in Sources */,
 				816B29C625B59A650067C835 /* CalendarView.swift in Sources */,
 				91BF249725AD6C7200DD34A4 /* CardSwipeDirection.swift in Sources */,
+				816B2A7125BAD6B60067C835 /* PublicUtil.swift in Sources */,
 				91BF24A425ADA5E500DD34A4 /* DateTool.swift in Sources */,
 				816B2A2C25BA86640067C835 /* SuitItem.swift in Sources */,
 				91BF249925AD6C7200DD34A4 /* CardStack.swift in Sources */,
-				81DEE56725B05B6D00BEA901 /* Request.swift in Sources */,
 				81DEE56025B04DE100BEA901 /* CardBottom.swift in Sources */,
 				91BF249A25AD6C7200DD34A4 /* CardStackConfiguration.swift in Sources */,
 			);
@@ -285,7 +425,61 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		816B2A4725BABAF10067C835 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 816B2A3925BABAEF0067C835 /* TodayExtension */;
+			targetProxy = 816B2A4625BABAF10067C835 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		816B2A4B25BABAF20067C835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69LR4SZVY2;
+				INFOPLIST_FILE = Today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.deerfly.CalendarCard.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		816B2A4C25BABAF20067C835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69LR4SZVY2;
+				INFOPLIST_FILE = Today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.deerfly.CalendarCard.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9161555625AC0FA000009C2B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -405,6 +599,7 @@
 		9161555925AC0FA000009C2B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CalendarCard/CalendarCard.entitlements;
@@ -429,6 +624,7 @@
 		9161555A25AC0FA000009C2B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CalendarCard/CalendarCard.entitlements;
@@ -453,6 +649,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		816B2A4A25BABAF20067C835 /* Build configuration list for PBXNativeTarget "TodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				816B2A4B25BABAF20067C835 /* Debug */,
+				816B2A4C25BABAF20067C835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9161554425AC0F9E00009C2B /* Build configuration list for PBXProject "CalendarCard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -474,14 +679,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		816B29D225B6B7CF0067C835 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/malcommac/SwiftDate";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.3.1;
-			};
-		};
 		81DEE56225B05B3300BEA901 /* XCRemoteSwiftPackageReference "SwiftMesh" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jackiehu/SwiftMesh.git";
@@ -501,10 +698,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		816B29D325B6B7CF0067C835 /* SwiftDate */ = {
+		816B2A6A25BAC2DD0067C835 /* SwiftMesh */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 816B29D225B6B7CF0067C835 /* XCRemoteSwiftPackageReference "SwiftDate" */;
-			productName = SwiftDate;
+			package = 81DEE56225B05B3300BEA901 /* XCRemoteSwiftPackageReference "SwiftMesh" */;
+			productName = SwiftMesh;
 		};
 		81DEE56325B05B3300BEA901 /* SwiftMesh */ = {
 			isa = XCSwiftPackageProductDependency;

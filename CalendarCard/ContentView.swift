@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var data: [String] = Item.loadDate()
+    @State var data: [String] = LunarTool.loadDate()
     var body: some View {
         ZStack{
             
             Button(action: {
                 NotificationCenter.default.post(Notification.init(name: Notification.Name.init("ReloadCard")))
             }){
-                Text("回到今天");
+                Text("回到今天")
             }
             .frame(height: 80.0)
             .font(.title)
@@ -31,11 +31,11 @@ struct ContentView: View {
                     print("Swiped to \(index)--\(direction)")
                 },
                 content: { date, _, _ in
-                    let d = Item.stringConvertDate(string: date)
+                    let d = LunarTool.stringConvertDate(string: date)
 
                     let holiday = Request.shared.getInfo(d.getHolidayKey())
 
-                    if let info = Item.getDateInfo(date: d){
+                    if let info = LunarTool.getDateInfo(date: d){
                         CardItemView(info: info, holiday: holiday)
                     }
                 }

@@ -14,11 +14,7 @@ struct CalendarView<DateView>: View where DateView: View {
     let showHeaders: Bool
     let content: (Date) -> DateView
     
-    init(
-        interval: DateInterval,
-        showHeaders: Bool = true,
-        @ViewBuilder content: @escaping (Date) -> DateView
-    ) {
+    init(interval: DateInterval, showHeaders: Bool = true, @ViewBuilder content: @escaping (Date) -> DateView) {
         self.interval = interval
         self.showHeaders = showHeaders
         self.content = content
@@ -81,7 +77,7 @@ struct CalendarView<DateView>: View where DateView: View {
     
     private func days(for month: Date) -> [Date] {
         guard let monthInterval = calendar.dateInterval(of: .month, for: month) else { return [] }
-        let monthFirstWeek = monthInterval.start.getWeekStartAndEnd(true)
+        let monthFirstWeek = monthInterval.start.getWeekStartAndEnd()
         let monthLastWeek = monthInterval.end.getWeekStartAndEnd()
         
         return calendar.generateDates(

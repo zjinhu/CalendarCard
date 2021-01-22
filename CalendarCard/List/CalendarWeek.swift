@@ -11,7 +11,7 @@ struct CalendarWeek: View {
     var body: some View {
         HStack{
             ForEach(1...7, id: \.self) { count in
-                Text(Item.getWeek(week: count))
+                Text(LunarTool.getWeek(week: count))
                     .frame(maxWidth: .infinity)
             }
         }
