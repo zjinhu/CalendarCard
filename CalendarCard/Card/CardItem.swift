@@ -49,8 +49,7 @@ struct CardItem: View {
                 CardHoliday(info: current!,
                             baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"),
                             day: "\(current!.s公历日)",
-                            holiday: currentHoliday) 
-                
+                            holiday: currentHoliday)
                 Spacer()
                 
                 CardBottom(info: current!,

@@ -43,13 +43,16 @@ struct CardHoliday: View {
                         }
                     }
                 }
+                .padding(.vertical, 5.0)
                 Spacer()
             }
-            
-            Text(day)
-                .font(Font.system(size: 200))
-                .fontWeight(.bold)
-                .foregroundColor(baseColor)
+            VStack{
+                Spacer()
+                Text(day)
+                    .font(Font.system(size: 200))
+                    .fontWeight(.bold)
+                    .foregroundColor(baseColor)
+            }
             
             if let h = holiday {
                 VStack{
@@ -71,7 +74,7 @@ struct CardHoliday: View {
                 }
             }
         }
-        .frame(width: 270.0, height: 270.0)
+        .frame(width: 270.0, height: 240.0)
     }
 }
 
@@ -98,6 +101,6 @@ struct CardHoliday_Previews: PreviewProvider {
                                    s数九数伏: "三九第九天"),
                     baseColor: .green,
                     day: "20",
-                    holiday: nil)
+                    holiday: Holiday())
     }
 }

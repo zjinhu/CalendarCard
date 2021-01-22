@@ -12,13 +12,19 @@ struct CardBottom: View {
     let baseColor: Color
     var body: some View {
         VStack{
+
             Image(Item.getImageName(name: info.s属相))
                 .renderingMode(.template)
                 .background(Color("BG_Color"))
                 .foregroundColor(baseColor)
+            
             Text("\(info.s年干支)(\(info.s属相))年 农历\(info.s农历月)")
-                .padding(.bottom, 5.0)
                 .foregroundColor(baseColor)
+            
+            
+           CardHuangli(baseColor: baseColor,
+                       suitAndAvoid: Item.suitAndAvoid(month: info.s农历月, rizhi: info.s日干支))
+            .padding(.vertical, 5.0)
             
             CardFoot(info: info, baseColor: baseColor)
             
