@@ -113,21 +113,11 @@ extension Date {
 }
 
 struct SuitAvoid {
-    
-    static let ganZhi = ["甲子","乙丑","丙寅","丁卯","戊辰","己巳","庚午","辛未","壬申","癸酉","甲戌","乙亥","丙子","丁丑","戊寅","己卯","庚辰","辛己","壬午","癸未","甲申","乙酉","丙戌","丁亥","戊子","己丑","庚寅","辛卯","壬辰","癸巳","甲午","乙未","丙申","丁酉","戊戌","己亥","庚子","辛丑","壬寅","癸丑","甲辰","乙巳","丙午","丁未","戊申","己酉","庚戌","辛亥","壬子","癸丑","甲寅","乙卯","丙辰","丁巳","戊午","己未","庚申","辛酉","壬戌","癸亥"]
-    
-    static func getRiGanZhi(date: Date)-> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        let someDateTime = formatter.date(from: "2019/07/26")
-        let count = date.daysBetweenDate(toDate: someDateTime!)
-        let index = 60-(60-count%60)%60
-        let ganzhi = ganZhi[index]
-        print("\(date)--\(ganzhi)")
-        return ganzhi
-    }
-    
-    static func suitAndAvoid(month: String, rizhi: String) -> ([String], [String]){
+
+    static func suitAndAvoid(date: Date, isSuit: Bool) -> [String] {
+        
+        let month = date.getLunar().0
+        let rizhi = getRiGanZhi(date: date)
         
         var indexMonth = -1
         switch month {
@@ -162,9 +152,32 @@ struct SuitAvoid {
         let dizhi: String = String(rizhi.suffix(1))
         
         guard let jian = get12jian(month: indexMonth, rizhi: dizhi) else {
-            return ([], [])
+            return []
         }
-        return getSuitAndAvoid(jian: jian)
+        if isSuit{
+            return getSuitAndAvoid(jian: jian).0
+        }else{
+            return getSuitAndAvoid(jian: jian).1
+        }
+
+    }
+    
+    fileprivate static let ganZhi = ["甲子","乙丑","丙寅","丁卯","戊辰","己巳","庚午","辛未","壬申","癸酉",
+                                     "甲戌","乙亥","丙子","丁丑","戊寅","己卯","庚辰","辛巳","壬午","癸未",
+                                     "甲申","乙酉","丙戌","丁亥","戊子","己丑","庚寅","辛卯","壬辰","癸巳",
+                                     "甲午","乙未","丙申","丁酉","戊戌","己亥","庚子","辛丑","壬寅","癸丑",
+                                     "甲辰","乙巳","丙午","丁未","戊申","己酉","庚戌","辛亥","壬子","癸丑",
+                                     "甲寅","乙卯","丙辰","丁巳","戊午","己未","庚申","辛酉","壬戌","癸亥"]
+    
+    fileprivate static func getRiGanZhi(date: Date)-> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let someDateTime = formatter.date(from: "2019/07/26")
+        let count = date.daysBetweenDate(toDate: someDateTime!)
+        let index = count%60
+        let ganzhi = ganZhi[index]
+        print("\(date)--\(ganzhi)")
+        return ganzhi
     }
     /**
      * 月支日支    一月寅节    二月卯节    三月辰节    四月巳节    五月午节    六月未节    七月申节    八月酉节    九月戍节    十月亥节    十一子节    十二丑节
@@ -282,8 +295,8 @@ struct SuitAvoid {
     fileprivate static let zhiSuit = ["造屋","装修","嫁娶","收购","立契","祭祀"]
     fileprivate static let zhiAvoid = ["开市","求财","出行","搬迁"]
     
-    fileprivate static let poSuit = ["破土","拆卸","求医"]
-    fileprivate static let poAvoid = ["嫁娶","签约","交涉","出行","搬迁"]
+    fileprivate static let poSuit = ["破土","拆卸"]
+    fileprivate static let poAvoid = ["是日值月破,大事不宜"]
     
     fileprivate static let weiSuit = ["祭祀","祈福","安床","拆卸","破土"]
     fileprivate static let weiAvoid = ["登山","乘船","出行","嫁娶","造葬","迁徙"]

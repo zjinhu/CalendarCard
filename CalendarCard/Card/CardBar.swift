@@ -13,7 +13,7 @@ struct CardBar: View {
     var body: some View {
         HStack{
             Button(action: {
-                NotificationCenter.default.post(Notification.init(name: Notification.Name.init("ReloadCard")))
+                NotificationCenter.default.post(name: NSNotification.Name.init(CardNotification), object: Date().todayCount())
             }) {
                 Image("Today_Image")
             }

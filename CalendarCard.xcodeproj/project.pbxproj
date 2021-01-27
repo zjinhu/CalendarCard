@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		812463DF25C01D8700138267 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812463DE25C01D8700138267 /* CardView.swift */; };
 		816B29B425B536730067C835 /* CardBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29B325B536730067C835 /* CardBar.swift */; };
 		816B29C625B59A650067C835 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29C425B59A650067C835 /* CalendarView.swift */; };
 		816B29CA25B59AA20067C835 /* CalendarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B29C925B59AA20067C835 /* CalendarList.swift */; };
@@ -43,14 +44,8 @@
 		9161554F25AC0F9E00009C2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9161554E25AC0F9E00009C2B /* ContentView.swift */; };
 		9161555125AC0FA000009C2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9161555025AC0FA000009C2B /* Assets.xcassets */; };
 		9161555425AC0FA000009C2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9161555325AC0FA000009C2B /* Preview Assets.xcassets */; };
-		91BF249725AD6C7200DD34A4 /* CardSwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF249325AD6C7200DD34A4 /* CardSwipeDirection.swift */; };
-		91BF249825AD6C7200DD34A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF249425AD6C7200DD34A4 /* CardView.swift */; };
-		91BF249925AD6C7200DD34A4 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF249525AD6C7200DD34A4 /* CardStack.swift */; };
-		91BF249A25AD6C7200DD34A4 /* CardStackConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF249625AD6C7200DD34A4 /* CardStackConfiguration.swift */; };
-		91BF249E25ADA55D00DD34A4 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 91BF249D25ADA55D00DD34A4 /* SwiftCSV */; };
 		91BF24A125ADA5A300DD34A4 /* wnl.csv in Resources */ = {isa = PBXBuildFile; fileRef = 91BF24A025ADA5A300DD34A4 /* wnl.csv */; };
 		91BF24A425ADA5E500DD34A4 /* DateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF24A325ADA5E500DD34A4 /* DateTool.swift */; };
-		91BF24A725ADA65D00DD34A4 /* CardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF24A625ADA65D00DD34A4 /* CardItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		812463DE25C01D8700138267 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		816B29B325B536730067C835 /* CardBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBar.swift; sourceTree = "<group>"; };
 		816B29C425B59A650067C835 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		816B29C925B59AA20067C835 /* CalendarList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarList.swift; sourceTree = "<group>"; };
@@ -114,13 +110,8 @@
 		9161555025AC0FA000009C2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9161555325AC0FA000009C2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9161555525AC0FA000009C2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91BF249325AD6C7200DD34A4 /* CardSwipeDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSwipeDirection.swift; sourceTree = "<group>"; };
-		91BF249425AD6C7200DD34A4 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		91BF249525AD6C7200DD34A4 /* CardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
-		91BF249625AD6C7200DD34A4 /* CardStackConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackConfiguration.swift; sourceTree = "<group>"; };
 		91BF24A025ADA5A300DD34A4 /* wnl.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wnl.csv; sourceTree = "<group>"; };
 		91BF24A325ADA5E500DD34A4 /* DateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTool.swift; sourceTree = "<group>"; };
-		91BF24A625ADA65D00DD34A4 /* CardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91BF249E25ADA55D00DD34A4 /* SwiftCSV in Frameworks */,
 				81DEE56425B05B3300BEA901 /* SwiftMesh in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +136,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		812463E625C150C000138267 /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				91BF24A025ADA5A300DD34A4 /* wnl.csv */,
+				81DEE53F25AFF19E00BEA901 /* 2020.csv */,
+				81DEE53D25AFF19E00BEA901 /* 2021.csv */,
+				81DEE53E25AFF19E00BEA901 /* 2022.csv */,
+			);
+			path = Resouces;
+			sourceTree = "<group>";
+		};
 		816B29C225B59A650067C835 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +204,7 @@
 				81DEE56925B13D6D00BEA901 /* CardHoliday.swift */,
 				816B2A2E25BA87AD0067C835 /* CardHuangli.swift */,
 				816B2A2B25BA86640067C835 /* SuitItem.swift */,
+				9161555025AC0FA000009C2B /* Assets.xcassets */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -232,16 +234,11 @@
 			children = (
 				9161554C25AC0F9E00009C2B /* CalendarCardApp.swift */,
 				9161554E25AC0F9E00009C2B /* ContentView.swift */,
-				91BF24A625ADA65D00DD34A4 /* CardItemView.swift */,
-				91BF24A025ADA5A300DD34A4 /* wnl.csv */,
-				81DEE53F25AFF19E00BEA901 /* 2020.csv */,
-				81DEE53D25AFF19E00BEA901 /* 2021.csv */,
-				81DEE53E25AFF19E00BEA901 /* 2022.csv */,
+				812463E625C150C000138267 /* Resouces */,
 				816B2A7525BAD70B0067C835 /* Date */,
 				816B29C225B59A650067C835 /* List */,
 				91BF249225AD6C7200DD34A4 /* CardStack */,
 				8194D24025B18FA700D0D33C /* Card */,
-				9161555025AC0FA000009C2B /* Assets.xcassets */,
 				9161555525AC0FA000009C2B /* Info.plist */,
 				9161555225AC0FA000009C2B /* Preview Content */,
 			);
@@ -259,10 +256,7 @@
 		91BF249225AD6C7200DD34A4 /* CardStack */ = {
 			isa = PBXGroup;
 			children = (
-				91BF249525AD6C7200DD34A4 /* CardStack.swift */,
-				91BF249425AD6C7200DD34A4 /* CardView.swift */,
-				91BF249325AD6C7200DD34A4 /* CardSwipeDirection.swift */,
-				91BF249625AD6C7200DD34A4 /* CardStackConfiguration.swift */,
+				812463DE25C01D8700138267 /* CardView.swift */,
 			);
 			path = CardStack;
 			sourceTree = "<group>";
@@ -306,7 +300,6 @@
 			);
 			name = CalendarCard;
 			packageProductDependencies = (
-				91BF249D25ADA55D00DD34A4 /* SwiftCSV */,
 				81DEE56325B05B3300BEA901 /* SwiftMesh */,
 			);
 			productName = CalendarCard;
@@ -340,7 +333,6 @@
 			);
 			mainGroup = 9161554025AC0F9E00009C2B;
 			packageReferences = (
-				91BF249C25ADA55D00DD34A4 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
 				81DEE56225B05B3300BEA901 /* XCRemoteSwiftPackageReference "SwiftMesh" */,
 			);
 			productRefGroup = 9161554A25AC0F9E00009C2B /* Products */;
@@ -403,23 +395,19 @@
 				8194D23D25B182CC00D0D33C /* CardItem.swift in Sources */,
 				816B29D725B6C8420067C835 /* CalendarWeek.swift in Sources */,
 				816B29CA25B59AA20067C835 /* CalendarList.swift in Sources */,
-				91BF24A725ADA65D00DD34A4 /* CardItemView.swift in Sources */,
 				9161554D25AC0F9E00009C2B /* CalendarCardApp.swift in Sources */,
 				816B29B425B536730067C835 /* CardBar.swift in Sources */,
 				816B2A5D25BABFD90067C835 /* LunarTool.swift in Sources */,
 				81DEE55725B037B100BEA901 /* CardFoot.swift in Sources */,
 				81DEE55D25B0397F00BEA901 /* FootRight.swift in Sources */,
-				91BF249825AD6C7200DD34A4 /* CardView.swift in Sources */,
 				81DEE55A25B0397100BEA901 /* FootLeft.swift in Sources */,
 				81DEE55425B02E9D00BEA901 /* CardHead.swift in Sources */,
 				816B29C625B59A650067C835 /* CalendarView.swift in Sources */,
-				91BF249725AD6C7200DD34A4 /* CardSwipeDirection.swift in Sources */,
 				816B2A7125BAD6B60067C835 /* PublicUtil.swift in Sources */,
 				91BF24A425ADA5E500DD34A4 /* DateTool.swift in Sources */,
 				816B2A2C25BA86640067C835 /* SuitItem.swift in Sources */,
-				91BF249925AD6C7200DD34A4 /* CardStack.swift in Sources */,
+				812463DF25C01D8700138267 /* CardView.swift in Sources */,
 				81DEE56025B04DE100BEA901 /* CardBottom.swift in Sources */,
-				91BF249A25AD6C7200DD34A4 /* CardStackConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,14 +675,6 @@
 				minimumVersion = 1.5.0;
 			};
 		};
-		91BF249C25ADA55D00DD34A4 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/swiftcsv/SwiftCSV";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.6.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -707,11 +687,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 81DEE56225B05B3300BEA901 /* XCRemoteSwiftPackageReference "SwiftMesh" */;
 			productName = SwiftMesh;
-		};
-		91BF249D25ADA55D00DD34A4 /* SwiftCSV */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 91BF249C25ADA55D00DD34A4 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
-			productName = SwiftCSV;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

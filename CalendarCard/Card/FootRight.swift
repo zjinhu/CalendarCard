@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct FootRight: View {
-    let info: DateInfo
+    let date: Date
     let baseColor: Color
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Text(LunarTool.getWeek(week: info.s星期))
+                Text(LunarTool.getWeekEng(week: date.getWeekDay()))
                     .font(.system(size: 16))
                     .foregroundColor(baseColor)
                 Spacer()
@@ -22,7 +22,7 @@ struct FootRight: View {
             .frame(height: 30.0)
             .background(Color("Bottom_Color"))
             
-            Text(info.s星期)
+            Text(LunarTool.getWeekChn(week: date.getWeekDay()))
                 .font(Font.system(size: 30))
                 .fontWeight(.bold)
                 .foregroundColor(Color("Bottom_Color"))
@@ -34,24 +34,6 @@ struct FootRight: View {
 
 struct FootRight_Previews: PreviewProvider {
     static var previews: some View {
-        FootRight(info: DateInfo(s公历日期: "2021-01-15",
-                                 s公历年: 2021,
-                                 s公历月: 01,
-                                 s公历日: 15,
-                                 s星期: "星期五",
-                                 s农历年: "2020",
-                                 s农历月: "腊月",
-                                 s农历日: "初三",
-                                 s年干支: "庚子",
-                                 s月干支: "己丑",
-                                 s日干支: "甲子",
-                                 s闰月: "4",
-                                 s属相: "鼠",
-                                 s节气: "",
-                                 s节气时间: "",
-                                 s公历节日: "",
-                                 s农历节日: "",
-                                 s特殊节日: "",
-                                 s数九数伏: "三九第九天"), baseColor: .green)
+        FootRight(date: Date(), baseColor: .green)
     }
 }

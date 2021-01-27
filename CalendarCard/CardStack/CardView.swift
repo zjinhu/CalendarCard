@@ -1,74 +1,121 @@
+//
+//  CardView.swift
+//  Card
+//
+//  Created by iOS on 2021/1/26.
+//
+
 import SwiftUI
 
-struct CardView<Direction, Content: View>: View {
-  @Environment(\.cardStackConfiguration) private var configuration: CardStackConfiguration
-  @State private var translation: CGSize = .zero
+public let CardNotification = "CardNotification"
 
-  private let direction: (Double) -> Direction?
-  private let isOnTop: Bool
-  private let onSwipe: (Direction) -> Void
-  private let content: (Direction?) -> Content
+public struct CardStack<ID: Hashable, Data: RandomAccessCollection, Content: View>: View where Data.Index: Hashable {
 
-  init(
-    direction: @escaping (Double) -> Direction?,
-    isOnTop: Bool,
-    onSwipe: @escaping (Direction) -> Void,
-    @ViewBuilder content: @escaping (Direction?) -> Content
-  ) {
-    self.direction = direction
-    self.isOnTop = isOnTop
-    self.onSwipe = onSwipe
-    self.content = content
-  }
-
-  var body: some View {
-    GeometryReader { geometry in
-      self.content(self.swipeDirection(geometry))
-        .offset(self.translation)
-        .rotationEffect(self.rotation(geometry))
-        .simultaneousGesture(self.isOnTop ? self.dragGesture(geometry) : nil)
+    @State var index: Data.Index
+    
+    private let data: Data
+    private let id: KeyPath<Data.Element, ID>
+    private let content: (Data.Element) -> Content
+    
+    public init(index: Int,
+                data: Data,
+                id: KeyPath<Data.Element, ID>,
+                @ViewBuilder content: @escaping (Data.Element) -> Content) {
+        
+        self.data = data
+        self.id = id
+        self.content = content
+        self._index = State<Data.Index>(initialValue: index as! Data.Index)
     }
-    .transition(transition)
-  }
-
-  private func dragGesture(_ geometry: GeometryProxy) -> some Gesture {
-    DragGesture()
-      .onChanged { value in
-        self.translation = value.translation
-      }
-      .onEnded { value in
-        self.translation = value.translation
-        if let direction = self.swipeDirection(geometry) {
-          withAnimation(self.configuration.animation) { self.onSwipe(direction) }
-        } else {
-          withAnimation { self.translation = .zero }
+    
+    public var body: some View {
+        ZStack {
+            ForEach(data.indices.reversed(), id: \.self) { index -> AnyView in
+                let relativeIndex = self.data.distance(from: self.index, to: index)
+                if relativeIndex >= 0 && relativeIndex < 5 {
+                    return AnyView(self.card(index: index, relativeIndex: relativeIndex))
+                } else {
+                    return AnyView(EmptyView())
+                }
+            }
         }
-      }
-  }
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name.init(CardNotification)), perform: { noti in
+            if let num : Int = noti.object as? Int {
+                index = num as! Data.Index
+            }
+        })
+    }
+    
+    private func card(index: Data.Index, relativeIndex: Int) -> some View {
+        CardView(onSwipe: {
+            self.index = self.data.index(after: index)
+        }, content: {
+            self.content(self.data[index])
+                .offset(x: 0,y: CGFloat(relativeIndex) * 10)
+                .scaleEffect(1 - 0.1 * CGFloat(relativeIndex),anchor: .bottom)
+        })
+    }
+}
 
-  private var degree: Double {
-    var degree = atan2(translation.width, -translation.height) * 180 / .pi
-    if degree < 0 { degree += 360 }
-    return Double(degree)
-  }
+extension CardStack where Data.Element: Identifiable, ID == Data.Element.ID {
+    
+    public init(index: Int,
+                data: Data,
+                @ViewBuilder content: @escaping (Data.Element) -> Content ) {
+        self.init(index: index, data: data, id: \Data.Element.id, content: content)
+    }
+    
+}
 
-  private func rotation(_ geometry: GeometryProxy) -> Angle {
-    .degrees(
-      Double(translation.width / geometry.size.width) * 25
-    )
-  }
+extension CardStack where Data.Element: Hashable, ID == Data.Element {
+    
+    public init(index: Int,
+                data: Data,
+                @ViewBuilder content: @escaping (Data.Element) -> Content ) {
+        self.init(index: index, data: data, id: \Data.Element.self, content: content)
+    }
+    
+}
 
-  private func swipeDirection(_ geometry: GeometryProxy) -> Direction? {
-    guard let direction = direction(degree) else { return nil }
-    let threshold = min(geometry.size.width, geometry.size.height) / 2
-    let distance = hypot(translation.width, translation.height)
-    return distance > threshold ? direction : nil
-  }
 
-  private var transition: AnyTransition {
-    .asymmetric(
-      insertion: .identity,  // No animation needed for insertion
-      removal: .offset(x: translation.width * 2, y: translation.height * 2)  // Go out of screen when card removed
-    )
-  }
+struct CardView<Content: View>: View {
+    
+    @State private var offset: CGSize = .zero
+    private var contentView: () -> Content
+    private let swipe: () -> Void
+    
+    init(onSwipe: @escaping () -> Void,
+         @ViewBuilder content: @escaping () -> Content) {
+        contentView = content
+        swipe = onSwipe
+    }
+    
+    var body: some View {
+        GeometryReader{ geo in
+            contentView()
+                .offset(offset)
+                .rotationEffect(.degrees(Double(offset.width/geo.size.width)))
+                .gesture(dragGesture(geo))
+        }
+        .animation(.spring())
+    }
+    
+    private func dragGesture(_ geometry: GeometryProxy) -> some Gesture {
+        DragGesture()
+            .onChanged { value in
+                offset = value.translation
+            }
+            .onEnded { value in
+                offset = value.translation
+                
+                let threshold = min(geometry.size.width, geometry.size.height) / 2
+                let distance = hypot(offset.width, offset.height)
+                
+                if distance > threshold {
+                    swipe()
+                } else {
+                    offset = .zero
+                }
+            }
+    }
 }

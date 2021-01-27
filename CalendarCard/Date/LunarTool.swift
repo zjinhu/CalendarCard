@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftCSV
 
 extension Formatter {
     static let date: DateFormatter = {
@@ -16,47 +15,6 @@ extension Formatter {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter
     }()
-}
-
-struct ResourceHelper {
-    static func url(forResource name: String, withExtension type: String) -> URL? {
-        let bundle = Bundle.main
-        
-        if let url = bundle.url(forResource: name, withExtension: type) {
-            return url
-        }
-        return nil
-    }
-}
-
-struct DateInfo {
-    
-    var s公历日期: String
-    
-    var s公历年: Int
-    var s公历月: Int
-    var s公历日: Int
-    
-    var s星期: String
-    
-    var s农历年: String
-    var s农历月: String
-    var s农历日: String
-    
-    var s年干支: String
-    var s月干支: String
-    var s日干支: String
-    
-    var s闰月: String
-    var s属相: String
-    
-    var s节气: String
-    var s节气时间: String
-    
-    var s公历节日: String
-    var s农历节日: String
-    var s特殊节日: String
-    var s数九数伏: String
 }
 
 struct LunarTool {
@@ -78,6 +36,7 @@ struct LunarTool {
                                                    "2-14":"情人节",
                                                    "3-8":"妇女节",
                                                    "3-12":"植树节",
+                                                   "4-1":"愚人节",
                                                    "4-4":"清明",
                                                    "5-1":"劳动节",
                                                    "5-4":"青年节",
@@ -91,6 +50,70 @@ struct LunarTool {
     
     static func getDay(date: Date) -> String{
         return String(Calendar.current.component(.day, from: date))
+    }
+    
+    static func isWeekEnd(date: Date) -> Bool{
+        let week = date.getWeekDay()
+        switch week {
+        case 7, 1:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    fileprivate static let shengxiao = ["鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"]
+    fileprivate static let tiangan = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"]
+    fileprivate static let dizhi = ["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"]
+    
+    
+    ///农历年转生肖
+    static func getShengXiao(withYear year: Int) -> String {
+        let index: Int = (year - 1) % shengxiao.count
+        return shengxiao[index]
+    }
+        
+    static func getShengXiao(withDate date: Date) -> String {
+        let calendar: Calendar = Calendar(identifier: .chinese)
+        return getShengXiao(withYear: calendar.component(.year, from: date))
+    }
+    
+    ///农历年转干支
+    static func getNianGanZhi(withYear year: Int) -> String {
+        let indexTiangan: Int = (year - 1) % tiangan.count
+        let indexDizhi: Int = (year - 1) % dizhi.count
+        return tiangan[indexTiangan] + dizhi[indexDizhi]
+    }
+    
+    static func getNianGanZhi(withDate date: Date) -> String {
+        let calendar: Calendar = Calendar(identifier: .chinese)
+        return getNianGanZhi(withYear: calendar.component(.year, from: date))
+    }
+    
+    static func getJieRi(date: Date) -> String?{
+        
+        let pu = DateFormatter()
+        pu.locale = Locale(identifier: "zh_CN")
+        pu.dateFormat = "M-d"
+        let gregorian = pu.string(from: date)
+        
+        let lunarCalendar = Calendar.init(identifier: .chinese)
+        let lu = DateFormatter()
+        lu.locale = Locale(identifier: "zh_CN")
+        lu.dateStyle = .short
+        lu.calendar = lunarCalendar
+        lu.dateFormat = "M-d"
+        let lunar = lu.string(from: date)
+        
+        if let holiday = chineseHoliDay[lunar] {
+            return holiday
+        }
+        
+        if let holiday = gregorianHoliDay[gregorian] {
+            return holiday
+        }
+        
+        return nil
     }
     
     static func getInfo(date: Date) -> String{
@@ -110,26 +133,11 @@ struct LunarTool {
         ri.calendar = lunarCalendar
         ri.dateFormat = "d"
         
-        let pu = DateFormatter()
-        pu.locale = Locale(identifier: "zh_CN")
-        pu.dateFormat = "M-d"
-        let gregorian = pu.string(from: date)
-        
-        let lu = DateFormatter()
-        lu.locale = Locale(identifier: "zh_CN")
-        lu.dateStyle = .short
-        lu.calendar = lunarCalendar
-        lu.dateFormat = "M-d"
-        let lunar = lu.string(from: date)
         
         let month = yue.string(from: date)
         let day = ri.string(from: date)
         
-        if let holiday = chineseHoliDay[lunar] {
-            return holiday
-        }
-        
-        if let holiday = gregorianHoliDay[gregorian] {
+        if let holiday = getJieRi(date: date) {
             return holiday
         }
         
@@ -201,43 +209,7 @@ struct LunarTool {
         }
         return dates
     }
-    ///获取日期的信息
-    static func getDateInfo(date: Date) -> DateInfo?{
-        
-        let count = date.daysBetweenDate(toDate: date.startOfCurrentYear())
-        
-        let info = date.getDateInfo()
-        
-        guard let csvURL = ResourceHelper.url(forResource: "\(info.0)", withExtension: "csv") else {
-            return nil
-        }
-        
-        let csv = try? CSV(url: csvURL)
-        guard let wnl = csv?.enumeratedRows[count] else {
-            return nil
-        }
-        
-        return DateInfo(s公历日期: wnl[0],
-                        s公历年: info.0,
-                        s公历月: info.1,
-                        s公历日: info.2,
-                        s星期: wnl[1],
-                        s农历年: wnl[2],
-                        s农历月: wnl[3],
-                        s农历日: wnl[4],
-                        s年干支: wnl[5],
-                        s月干支: wnl[8],
-                        s日干支: wnl[9],
-                        s闰月: wnl[7],
-                        s属相: wnl[6],
-                        s节气: wnl[10],
-                        s节气时间: wnl[11],
-                        s公历节日: wnl[12],
-                        s农历节日: wnl[13],
-                        s特殊节日: wnl[14],
-                        s数九数伏: wnl[15])
-        
-    }
+   
     
     static func getMonth(index: Int) -> String{
         switch index {
@@ -270,22 +242,43 @@ struct LunarTool {
         }
     }
     
-    static func getWeek(week: String) -> String{
+    static func getWeekEng(week: Int) -> String{
         switch week {
-        case "星期一":
+        case 2:
             return "MONDAY"
-        case "星期二":
+        case 3:
             return "TUESDAY"
-        case "星期三":
+        case 4:
             return "WEDNESDAY"
-        case "星期四":
+        case 5:
             return "THURSDAY"
-        case "星期五":
+        case 6:
             return "FRIDAY"
-        case "星期六":
+        case 7:
             return "SATURDAY"
-        case "星期日":
+        case 1:
             return "SUNDAY"
+        default:
+            return ""
+        }
+    }
+    
+    static func getWeekChn(week: Int) -> String{
+        switch week {
+        case 2:
+            return "星期一"
+        case 3:
+            return "星期二"
+        case 4:
+            return "星期三"
+        case 5:
+            return "星期四"
+        case 6:
+            return "星期五"
+        case 7:
+            return "星期六"
+        case 1:
+            return "星期日"
         default:
             return ""
         }
@@ -342,7 +335,63 @@ struct LunarTool {
             return ""
         }
     }
+}
+
+struct Constellation {
+
+    public static func calculateWithDate(date: Date) -> String {
+
+        let components = Calendar.current.dateComponents([.month, .day], from: date)
+        let month = components.month!
+        let day = components.day!
+
+        // 月以100倍之月作为一个数字计算出来
+        let mmdd = month * 100 + day
+        var result = ""
+        
+        if ((mmdd >= 321 && mmdd <= 331) ||
+            (mmdd >= 401 && mmdd <= 419)) {
+            result = "白羊座"
+        } else if ((mmdd >= 420 && mmdd <= 430) ||
+            (mmdd >= 501 && mmdd <= 520)) {
+            result = "金牛座"
+        } else if ((mmdd >= 521 && mmdd <= 531) ||
+            (mmdd >= 601 && mmdd <= 621)) {
+            result = "双子座"
+        } else if ((mmdd >= 622 && mmdd <= 630) ||
+            (mmdd >= 701 && mmdd <= 722)) {
+            result = "巨蟹座"
+        } else if ((mmdd >= 723 && mmdd <= 731) ||
+            (mmdd >= 801 && mmdd <= 822)) {
+            result = "狮子座"
+        } else if ((mmdd >= 823 && mmdd <= 831) ||
+            (mmdd >= 901 && mmdd <= 922)) {
+            result = "处女座"
+        } else if ((mmdd >= 923 && mmdd <= 930) ||
+            (mmdd >= 1001 && mmdd <= 1023)) {
+            result = "天秤座"
+        } else if ((mmdd >= 1024 && mmdd <= 1031) ||
+            (mmdd >= 1101 && mmdd <= 1122)) {
+            result = "天蝎座"
+        } else if ((mmdd >= 1123 && mmdd <= 1130) ||
+            (mmdd >= 1201 && mmdd <= 1221)) {
+            result = "射手座"
+        } else if ((mmdd >= 1222 && mmdd <= 1231) ||
+            (mmdd >= 101 && mmdd <= 119)) {
+            result = "摩羯座"
+        } else if ((mmdd >= 120 && mmdd <= 131) ||
+            (mmdd >= 201 && mmdd <= 218)) {
+            result = "水瓶座"
+        } else if ((mmdd >= 219 && mmdd <= 229) ||
+            (mmdd >= 301 && mmdd <= 320)) {
+            //考虑到2月闰年有29天的
+            result = "双鱼座"
+        }else{
+            print(mmdd)
+            result = "日期错误"
+        }
+        return result
+    }
     
-    
-    
+
 }

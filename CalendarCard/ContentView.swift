@@ -13,7 +13,7 @@ struct ContentView: View {
         ZStack{
             
             Button(action: {
-                NotificationCenter.default.post(Notification.init(name: Notification.Name.init("ReloadCard")))
+                NotificationCenter.default.post(name: NSNotification.Name.init(CardNotification), object: Date().todayCount())
             }){
                 Text("回到今天")
             }
@@ -24,23 +24,21 @@ struct ContentView: View {
             .foregroundColor(Color.white)
             .clipShape(Capsule())
             
-            CardStack(
-                direction: FourDirections.direction,
-                data: data,
-                onSwipe: { index, direction in
-                    print("Swiped to \(index)--\(direction)")
-                },
-                content: { date, _, _ in
-                    let d = LunarTool.stringConvertDate(string: date)
+            CardStack(index: Date().todayCount(), data: data){ date in
+                let d = LunarTool.stringConvertDate(string: date)
+                let holiday = Request.shared.getInfo(d.getHolidayKey())
 
-                    let holiday = Request.shared.getInfo(d.getHolidayKey())
-
-                    if let info = LunarTool.getDateInfo(date: d){
-                        CardItemView(info: info, holiday: holiday)
-                    }
+                GeometryReader { geo in
+                    CardItem(date: d, holiday: holiday)
                 }
-            )
-
+                .background(Color("BG_Color"))
+                .cornerRadius(12)
+                .shadow(radius: 4)
+                
+            }
+            .padding([.top, .leading, .trailing], 10.0)
+            .padding(/*@START_MENU_TOKEN@*/.bottom, 20.0/*@END_MENU_TOKEN@*/)
+    
         }
     }
     

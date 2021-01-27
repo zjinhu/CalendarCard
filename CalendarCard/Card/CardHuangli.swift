@@ -9,17 +9,17 @@ import SwiftUI
 
 struct CardHuangli: View {
     let baseColor: Color
-    let suitAndAvoid: ([String], [String])
+    let date: Date
     var body: some View {
         VStack{
-            SuitItem(baseColor: baseColor, title: "宜", array: suitAndAvoid.0)
-            SuitItem(baseColor: baseColor, title: "忌", array: suitAndAvoid.1)
+            SuitItem(baseColor: baseColor, title: "宜", array: SuitAvoid.suitAndAvoid(date: date, isSuit: true))
+            SuitItem(baseColor: baseColor, title: "忌", array: SuitAvoid.suitAndAvoid(date: date, isSuit: false))
         }
     }
 }
 
 struct CardHuangli_Previews: PreviewProvider {
     static var previews: some View {
-        CardHuangli(baseColor: .green, suitAndAvoid: (["String"], ["String"]))
+        CardHuangli(baseColor: .green, date: Date())
     }
 }

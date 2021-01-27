@@ -31,7 +31,7 @@ struct CalendarList: View {
                         mode.wrappedValue.dismiss()
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                             let count = Date.dayCount(selectDate: date.transDate())
-                            NotificationCenter.default.post(name: NSNotification.Name.init("ReloadCard"), object: count)
+                            NotificationCenter.default.post(name: NSNotification.Name.init(CardNotification), object: count)
                         }
                     }
             }
