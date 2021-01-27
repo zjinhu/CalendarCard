@@ -30,9 +30,6 @@
 		816B2A7125BAD6B60067C835 /* PublicUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A7025BAD6B60067C835 /* PublicUtil.swift */; };
 		816B2A7225BAD6B60067C835 /* PublicUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B2A7025BAD6B60067C835 /* PublicUtil.swift */; };
 		8194D23D25B182CC00D0D33C /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194D23C25B182CC00D0D33C /* CardItem.swift */; };
-		81DEE54025AFF19E00BEA901 /* 2021.csv in Resources */ = {isa = PBXBuildFile; fileRef = 81DEE53D25AFF19E00BEA901 /* 2021.csv */; };
-		81DEE54125AFF19E00BEA901 /* 2022.csv in Resources */ = {isa = PBXBuildFile; fileRef = 81DEE53E25AFF19E00BEA901 /* 2022.csv */; };
-		81DEE54225AFF19E00BEA901 /* 2020.csv in Resources */ = {isa = PBXBuildFile; fileRef = 81DEE53F25AFF19E00BEA901 /* 2020.csv */; };
 		81DEE55425B02E9D00BEA901 /* CardHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEE55325B02E9D00BEA901 /* CardHead.swift */; };
 		81DEE55725B037B100BEA901 /* CardFoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEE55625B037B100BEA901 /* CardFoot.swift */; };
 		81DEE55A25B0397100BEA901 /* FootLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEE55925B0397100BEA901 /* FootLeft.swift */; };
@@ -44,7 +41,6 @@
 		9161554F25AC0F9E00009C2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9161554E25AC0F9E00009C2B /* ContentView.swift */; };
 		9161555125AC0FA000009C2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9161555025AC0FA000009C2B /* Assets.xcassets */; };
 		9161555425AC0FA000009C2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9161555325AC0FA000009C2B /* Preview Assets.xcassets */; };
-		91BF24A125ADA5A300DD34A4 /* wnl.csv in Resources */ = {isa = PBXBuildFile; fileRef = 91BF24A025ADA5A300DD34A4 /* wnl.csv */; };
 		91BF24A425ADA5E500DD34A4 /* DateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF24A325ADA5E500DD34A4 /* DateTool.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,9 +91,6 @@
 		816B2A6325BAC2200067C835 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		816B2A7025BAD6B60067C835 /* PublicUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicUtil.swift; sourceTree = "<group>"; };
 		8194D23C25B182CC00D0D33C /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
-		81DEE53D25AFF19E00BEA901 /* 2021.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2021.csv; sourceTree = "<group>"; };
-		81DEE53E25AFF19E00BEA901 /* 2022.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2022.csv; sourceTree = "<group>"; };
-		81DEE53F25AFF19E00BEA901 /* 2020.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2020.csv; sourceTree = "<group>"; };
 		81DEE55325B02E9D00BEA901 /* CardHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHead.swift; sourceTree = "<group>"; };
 		81DEE55625B037B100BEA901 /* CardFoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFoot.swift; sourceTree = "<group>"; };
 		81DEE55925B0397100BEA901 /* FootLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootLeft.swift; sourceTree = "<group>"; };
@@ -110,7 +103,6 @@
 		9161555025AC0FA000009C2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9161555325AC0FA000009C2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9161555525AC0FA000009C2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91BF24A025ADA5A300DD34A4 /* wnl.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wnl.csv; sourceTree = "<group>"; };
 		91BF24A325ADA5E500DD34A4 /* DateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,17 +128,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		812463E625C150C000138267 /* Resouces */ = {
-			isa = PBXGroup;
-			children = (
-				91BF24A025ADA5A300DD34A4 /* wnl.csv */,
-				81DEE53F25AFF19E00BEA901 /* 2020.csv */,
-				81DEE53D25AFF19E00BEA901 /* 2021.csv */,
-				81DEE53E25AFF19E00BEA901 /* 2022.csv */,
-			);
-			path = Resouces;
-			sourceTree = "<group>";
-		};
 		816B29C225B59A650067C835 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,7 +215,6 @@
 			children = (
 				9161554C25AC0F9E00009C2B /* CalendarCardApp.swift */,
 				9161554E25AC0F9E00009C2B /* ContentView.swift */,
-				812463E625C150C000138267 /* Resouces */,
 				816B2A7525BAD70B0067C835 /* Date */,
 				816B29C225B59A650067C835 /* List */,
 				91BF249225AD6C7200DD34A4 /* CardStack */,
@@ -358,12 +338,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81DEE54225AFF19E00BEA901 /* 2020.csv in Resources */,
-				91BF24A125ADA5A300DD34A4 /* wnl.csv in Resources */,
 				9161555425AC0FA000009C2B /* Preview Assets.xcassets in Resources */,
 				9161555125AC0FA000009C2B /* Assets.xcassets in Resources */,
-				81DEE54125AFF19E00BEA901 /* 2022.csv in Resources */,
-				81DEE54025AFF19E00BEA901 /* 2021.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
