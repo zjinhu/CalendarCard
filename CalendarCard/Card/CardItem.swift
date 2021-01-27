@@ -53,7 +53,8 @@ struct CardItem: View {
                 
                 CardBottom(date: current!,
                            baseColor: status == 1||status == 3 ? Color("Red_Color") : Color("Green_Color"))
-                    .padding([.leading, .bottom, .trailing], 10.0)
+                    .padding([.leading, .trailing], 10.0)
+                    .padding([.bottom], 20.0)
             }
             
         }

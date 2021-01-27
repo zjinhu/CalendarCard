@@ -176,7 +176,7 @@ struct SuitAvoid {
         let count = date.daysBetweenDate(toDate: someDateTime!)
         let index = count%60
         let ganzhi = ganZhi[index]
-        print("\(date)--\(ganzhi)")
+//        print("\(date)--\(ganzhi)")
         return ganzhi
     }
     /**
