@@ -409,7 +409,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = TodayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69LR4SZVY2;
+				DEVELOPMENT_TEAM = BJSAM6XRY7;
 				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -432,7 +432,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = TodayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69LR4SZVY2;
+				DEVELOPMENT_TEAM = BJSAM6XRY7;
 				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -573,7 +573,7 @@
 				CODE_SIGN_ENTITLEMENTS = CalendarCard/CalendarCard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarCard/Preview Content\"";
-				DEVELOPMENT_TEAM = 69LR4SZVY2;
+				DEVELOPMENT_TEAM = BJSAM6XRY7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CalendarCard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -598,7 +598,7 @@
 				CODE_SIGN_ENTITLEMENTS = CalendarCard/CalendarCard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarCard/Preview Content\"";
-				DEVELOPMENT_TEAM = 69LR4SZVY2;
+				DEVELOPMENT_TEAM = BJSAM6XRY7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CalendarCard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
