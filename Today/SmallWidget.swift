@@ -18,7 +18,7 @@ struct SmallWidget: View {
                 HStack(alignment: .center){
                     
                     Text("\(date.getDateInfo().2)")
-                        .font(.system(size: 40))
+                        .font(.system(size: 30))
                         .fontWeight(.bold)
                         +
                         Text("/\(date.getDateInfo().1)月")
@@ -28,14 +28,14 @@ struct SmallWidget: View {
                     
                     Text("\(date.getWeekDayString())")
                         .font(.system(size: 16))
-                        .padding(.top, 16.0)
+                        .padding(.top, 10.0)
                 }
                 .padding(.horizontal, 8.0)
-                .frame(height: 50.0)
+                .frame(height: 46.0)
                 .foregroundColor(.white)
                 
             }
-            .background(LinearGradient(gradient: Gradient(colors: [Color("top_color_1"), Color("top_color_2")]), startPoint: .top, endPoint: .bottom))
+            .background(LinearGradient(gradient: Gradient(colors: [Color("red_color_1"), Color("red_color_2")]), startPoint: .top, endPoint: .bottom))
 
             Spacer()
 
@@ -46,31 +46,10 @@ struct SmallWidget: View {
                 
                 Spacer()
                 
-                HStack(alignment: .center) {
-                    Text("宜")
-                        .font(.caption)
-                        .padding(.all, 3.0)
-                        .overlay(
-                            Circle().stroke(Color.green, lineWidth: 2)
-                        )
-                    
-                    Text(SuitAvoid.suitAndAvoid(date: date, isSuit: true).joined(separator: " "))
-                        .font(.footnote)
-                        .lineLimit(1)
-                }
+                SuitView(date: date)
 
-                HStack(alignment: .center) {
-                    Text("忌")
-                        .font(.caption)
-                        .padding(.all, 3.0)
-                        .overlay(
-                            Circle().stroke(Color.red, lineWidth: 2)
-                        )
-                    
-                    Text(SuitAvoid.suitAndAvoid(date: date, isSuit: false).joined(separator: " "))
-                        .font(.footnote)
-                        .lineLimit(1)
-                }
+                AvoidView(date: date)
+                
                 Spacer()
             }
             .padding(.horizontal, 5.0)

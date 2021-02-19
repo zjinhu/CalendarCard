@@ -209,7 +209,6 @@ struct LunarTool {
         }
         return dates
     }
-   
     
     static func getMonth(index: Int) -> String{
         switch index {

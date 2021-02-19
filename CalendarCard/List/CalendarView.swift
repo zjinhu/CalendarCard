@@ -26,7 +26,7 @@ struct CalendarView<DateView>: View where DateView: View {
                 LazyVGrid(columns: Array(repeating: GridItem(spacing: 2, alignment: .center), count: 7)) {
                     ForEach(months, id: \.self) { month in
                         Section(header: header(for: month)) {
-                            ForEach(days(for: month), id: \.self) { date in
+                            ForEach(month.getMonthDays(), id: \.self) { date in
                                 if calendar.isDate(date, equalTo: month, toGranularity: .month) {
                                     content(date).id(date)
                                 } else {
@@ -74,18 +74,7 @@ struct CalendarView<DateView>: View where DateView: View {
             }
         }
     }
-    
-    private func days(for month: Date) -> [Date] {
-        guard let monthInterval = calendar.dateInterval(of: .month, for: month) else { return [] }
-        let monthFirstWeek = monthInterval.start.getWeekStartAndEnd()
-        let monthLastWeek = monthInterval.end.getWeekStartAndEnd()
-        
-        return calendar.generateDates(
-            inside: DateInterval(start: monthFirstWeek.start, end: monthLastWeek.end),
-            matching: DateComponents(hour: 0, minute: 0, second: 0)
-        )
-    }
-    
+
     //    private func days(for month: Date) -> [Date] {
     //        guard
     //            let monthInterval = calendar.dateInterval(of: .month, for: month),
@@ -125,31 +114,5 @@ fileprivate extension DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年M月"
         return formatter
-    }
-}
-
-fileprivate extension Calendar {
-    func generateDates(
-        inside interval: DateInterval,
-        matching components: DateComponents
-    ) -> [Date] {
-        var dates: [Date] = []
-        dates.append(interval.start)
-        
-        enumerateDates(
-            startingAfter: interval.start,
-            matching: components,
-            matchingPolicy: .nextTime
-        ) { date, _, stop in
-            if let date = date {
-                if date < interval.end {
-                    dates.append(date)
-                } else {
-                    stop = true
-                }
-            }
-        }
-        
-        return dates
     }
 }

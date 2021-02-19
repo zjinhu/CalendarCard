@@ -8,25 +8,7 @@
 import Foundation
 
 extension Date {
-    ///获取当前Date所在周的周一到周日
-    func getWeekStartAndEnd() -> DateInterval{
-        var date = self
-        ///因为一周的起始日是周日,周日已经算是下一周了
-        ///如果是周日就到退回去两天
-        if date.getWeekDay() == 1 {
-            date = date.addingTimeInterval(-60 * 60 * 24 * 2)
-        }
-        ///使用处理后的日期拿到这一周的间距: 周日到周六
-        let week = Calendar.current.dateInterval(of: .weekOfMonth, for: date)!
-        ///处理一下周日加一天到周一
-        let monday = week.start.addingTimeInterval(60 * 60 * 24)
-        ///周六加一天到周日
-        let sunday = week.end.addingTimeInterval(60 * 60 * 24)
-        ///生成新的周一到周日的间距
-        let interval = DateInterval(start: monday, end: sunday)
-        return interval
-    }
-    
+
     func todayCount() -> Int {
         let components = Calendar.current.dateComponents([.day], from: startOfCurrentYear(), to: self)
         return components.day ?? 0

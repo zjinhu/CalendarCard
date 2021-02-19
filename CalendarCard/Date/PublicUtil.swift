@@ -7,9 +7,100 @@
 
 import Foundation
 
+extension Calendar {
+    func generateDates(inside interval: DateInterval, matching components: DateComponents) -> [Date] {
+        var dates: [Date] = []
+        dates.append(interval.start)
+        enumerateDates(startingAfter: interval.start, matching: components, matchingPolicy: .nextTime) { date, _, stop in
+            if let date = date {
+                if date < interval.end {
+                    dates.append(date)
+                } else {
+                    stop = true
+                }
+            }
+        }
+        return dates
+    }
+}
+
 extension Date {
+    
+    var calendar: Calendar {
+        return Calendar(identifier: Calendar.current.identifier)
+    }
+
+
+    func isToday() -> Bool{
+        return calendar.isDateInToday(self)
+    }
+    
+    func isInMonth() -> Bool{
+        if calendar.isDate(self, equalTo: Date(), toGranularity: .month) {
+            return true
+        } else {
+            return false
+        }
+    }
+    ///获取当前Date所在周的周一到周日
+    func getWeekStart() -> DateInterval{
+        var date = self
+        ///因为一周的起始日是周日,周日已经算是下一周了
+        ///如果是周日就到退回去两天
+        let weekCount = date.getWeekDay()
+        if weekCount == 1 {
+            date = date.addingTimeInterval(-60 * 60 * 24 * 2)
+        }
+        ///使用处理后的日期拿到这一周的间距: 周日到周六
+        let week = calendar.dateInterval(of: .weekOfMonth, for: date)!
+        ///处理一下周日加一天到周一
+        let monday = week.start.addingTimeInterval(60 * 60 * 24)
+        ///周六加一天到周日
+        let sunday = week.end.addingTimeInterval(60 * 60 * 24)
+        ///生成新的周一到周日的间距
+        let interval = DateInterval(start: monday, end: sunday)
+        return interval
+    }
+    
+    func getWeekEnd() -> DateInterval{
+        var date = self
+        ///因为一周的起始日是周日,周日已经算是下一周了
+        ///如果是周日就到退回去两天
+        let weekCount = date.getWeekDay()
+        if weekCount <= 2 {
+            date = date.addingTimeInterval(-60 * 60 * 24 * 2)
+        }
+        ///使用处理后的日期拿到这一周的间距: 周日到周六
+        let week = calendar.dateInterval(of: .weekOfMonth, for: date)!
+        ///处理一下周日加一天到周一
+        let monday = week.start.addingTimeInterval(60 * 60 * 24)
+        ///周六加一天到周日
+        let sunday = week.end.addingTimeInterval(60 * 60 * 24)
+        ///生成新的周一到周日的间距
+        let interval = DateInterval(start: monday, end: sunday)
+        return interval
+    }
+    
+    func getWeekDays() -> [Date] {
+        return calendar.generateDates(
+            inside: DateInterval(start: self.getWeekStart().start, end: self.getWeekStart().end),
+            matching: DateComponents(hour: 0, minute: 0, second: 0)
+        )
+    }
+    
+    func getMonthDays() -> [Date] {
+        guard let monthInterval = calendar.dateInterval(of: .month, for: self) else { return [] }
+        let monthFirstWeek = monthInterval.start.getWeekStart()
+        let monthLastWeek = monthInterval.end.getWeekEnd()
+        
+        return calendar.generateDates(
+            inside: DateInterval(start: monthFirstWeek.start, end: monthLastWeek.end),
+            matching: DateComponents(hour: 0, minute: 0, second: 0)
+        )
+    }
+    
     var noon: Date {
-        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+        return calendar.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
     }
     
     func getHolidayKey() -> String{
@@ -26,20 +117,20 @@ extension Date {
         return formater.string(from: self)
     }
     
+    
     func daysBetweenDate(toDate: Date) -> Int {
-        let components = Calendar.current.dateComponents([.day], from: toDate, to: self)
+        let components = calendar.dateComponents([.day], from: toDate, to: self)
         return components.day ?? 0
     }
     
     func getWeekDay() -> Int{
-        let calendar = Calendar.current
         ///拿到现在的week数字
         let components = calendar.dateComponents([.weekday], from: self)
-        return components.weekday!
+        let weekCount = components.weekday!
+        return weekCount
     }
     
     func isWeekDay() -> Bool{
-        let calendar = Calendar.current
         let components = calendar.dateComponents([.weekday], from: self)
         return components.weekday!==1 || components.weekday!==7 ? true : false
     }
@@ -56,8 +147,14 @@ extension Date {
         return formater.string(from: self)
     }
     
+    func toYearString() -> String{
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "zh_CN")
+        formatter.dateFormat = "yyyy年M月"
+        return formatter.string(from: self)
+    }
+    
     func getDateInfo() -> (Int, Int, Int){
-        let calendar = Calendar.current
         let comp = calendar.dateComponents([.year, .month, .day], from: self)
         return (comp.year!, comp.month!, comp.day!)
     }
@@ -90,7 +187,6 @@ extension Date {
     
     //本年开始日期
     func startOfCurrentYear() -> Date {
-        let calendar = Calendar.current
         let components = calendar.dateComponents(Set<Calendar.Component>([.year]), from: self)
         let startOfYear = calendar.date(from: components)!
         return startOfYear
@@ -98,7 +194,6 @@ extension Date {
     
     //本年结束日期
     func endOfCurrentYear(returnEndTime: Bool = false) -> Date {
-        let calendar = Calendar.current
         var components = DateComponents()
         components.year = 1
         if returnEndTime {
