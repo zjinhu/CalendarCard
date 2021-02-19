@@ -27,7 +27,7 @@ struct WeekView: View {
         case "六", "日":
            return Color("red_color_2")
         default:
-            return Color(.black)
+            return Color("title_color")
         }
     }
 }

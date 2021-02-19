@@ -18,12 +18,12 @@ struct DayView: View {
                 Text("\(date.getDateInfo().2)")
                     .frame(width: 40, height: 24, alignment: .center)
                     .font(.system(size: 18))
-                    .foregroundColor(getColor(color:date.isWeekDay() ? Color("red_color_2") : Color(.black)))
+                    .foregroundColor(getColor(color:date.isWeekDay() ? Color("red_color_2") : Color("title_color")))
                 
                 
                 Text("\(LunarTool.getInfo(date: date))")
                     .font(.system(size: 11))
-                    .foregroundColor(getColor(color:date.isWeekDay() ? Color("red_color_2") : Color(.black)))
+                    .foregroundColor(getColor(color:date.isWeekDay() ? Color("red_color_2") : Color("lunar_color")))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: true, vertical: false)
             }
@@ -38,15 +38,14 @@ struct DayView: View {
                         Spacer()
                         ZStack{
                             Circle()
-                                .frame(width: 15.0, height: 15.0)
+                                .frame(width: 10.0, height: 10.0)
                                 .foregroundColor(getColor(color:status > 2 ? Color("red_color_2") : Color("green_color")))
                             
                             Text(status > 2  ? "休" : "班")
-                                .font(.system(size: 10))
-                                .fontWeight(.medium)
-                                .padding(.all, 2.0)
+                                .font(.system(size: 8))
                                 .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                         }
+                        .padding(.trailing, 5.0)
                     }
                     Spacer()
                 }
@@ -68,6 +67,7 @@ struct DayView: View {
 struct DayView_Previews: PreviewProvider {
     static var previews: some View {
         DayView(date: Date(), status: 1)
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+//            .previewLayout(.fixed(width: 40, height: 30))
     }
 }
