@@ -64,5 +64,6 @@ struct CalenderDay: View {
 struct CalenderDay_Previews: PreviewProvider {
     static var previews: some View {
         CalenderDay(day: "15", lunar: "腊八腊八", status: 4, isToday: true)
+            .previewLayout(.fixed(width: 60, height: 80))
     }
 }

@@ -21,5 +21,6 @@ struct CardHuangli: View {
 struct CardHuangli_Previews: PreviewProvider {
     static var previews: some View {
         CardHuangli(baseColor: .green, date: Date())
+            .previewLayout(.sizeThatFits)
     }
 }

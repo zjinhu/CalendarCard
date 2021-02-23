@@ -71,5 +71,6 @@ struct CardHoliday_Previews: PreviewProvider {
         CardHoliday(baseColor: .green,
                     date: Date(),
                     holiday: Holiday())
+            .previewLayout(.sizeThatFits)
     }
 }

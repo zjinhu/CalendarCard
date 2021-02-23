@@ -35,5 +35,6 @@ struct CardBottom: View {
 struct CardBottom_Previews: PreviewProvider {
     static var previews: some View {
         CardBottom(date: Date(), baseColor: .green)
+            .previewLayout(.sizeThatFits)
     }
 }

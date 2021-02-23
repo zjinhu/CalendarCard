@@ -2,10 +2,11 @@
 //  ContentView.swift
 //  CalendarCard
 //
-//  Created by 狄烨 . on 2021/1/11.
+//  Created by iOS on 2021/2/23.
 //
 
 import SwiftUI
+
 
 struct ContentView: View {
     @State var data: [String] = LunarTool.loadDate()
@@ -49,5 +50,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-

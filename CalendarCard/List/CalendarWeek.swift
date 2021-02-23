@@ -22,5 +22,6 @@ struct CalendarWeek: View {
 struct CalendarWeek_Previews: PreviewProvider {
     static var previews: some View {
         CalendarWeek()
+            .previewLayout(.fixed(width: 400, height: 30))
     }
 }

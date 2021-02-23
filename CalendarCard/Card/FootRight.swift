@@ -35,5 +35,6 @@ struct FootRight: View {
 struct FootRight_Previews: PreviewProvider {
     static var previews: some View {
         FootRight(date: Date(), baseColor: .green)
+            .previewLayout(.sizeThatFits)
     }
 }

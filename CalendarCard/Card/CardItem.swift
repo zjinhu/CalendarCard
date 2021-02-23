@@ -64,5 +64,6 @@ struct CardItem: View {
 struct CardItem_Previews: PreviewProvider {
     static var previews: some View {
         CardItem(date: Date(), holiday: Holiday())
+            .previewLayout(.sizeThatFits)
     }
 }

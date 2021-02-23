@@ -34,5 +34,6 @@ struct SuitItem: View {
 struct SuitItem_Previews: PreviewProvider {
     static var previews: some View {
         SuitItem(baseColor: .green, title: "宜", array: ["123"])
+            .previewLayout(.sizeThatFits)
     }
 }

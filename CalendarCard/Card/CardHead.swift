@@ -41,5 +41,6 @@ struct CardHead: View {
 struct CardHead_Previews: PreviewProvider {
     static var previews: some View {
         CardHead(date: Date(), baseColor: .green)
+            .previewLayout(.sizeThatFits)
     }
 }

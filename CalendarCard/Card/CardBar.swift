@@ -8,8 +8,8 @@
 import SwiftUI
 struct CardBar: View {
     let baseColor: Color
-    @State var isPresented = false
-    
+    @State var isNotiPresented = false
+    @State var isCalenderPresented = false
     var body: some View {
         HStack{
             Button(action: {
@@ -28,13 +28,24 @@ struct CardBar: View {
             Spacer()
             
             Button(action: {
-                isPresented.toggle()
+                isNotiPresented.toggle()
+            }) {
+                Image("Noti_Image")
+            }
+            .padding(20.0)
+            .frame(width: 60.0, height: 50.0)
+            .sheet(isPresented: $isNotiPresented) {
+                NotiListView()
+            }
+            
+            Button(action: {
+                isCalenderPresented.toggle()
             }) {
                 Image("Calendar_Image")
             }
             .padding(20.0)
             .frame(width: 60.0, height: 50.0)
-            .sheet(isPresented: $isPresented) {
+            .sheet(isPresented: $isCalenderPresented) {
                 CalendarList()
             }
             
@@ -48,5 +59,6 @@ struct CardBar: View {
 struct CardBar_Previews: PreviewProvider {
     static var previews: some View {
         CardBar(baseColor: .green)
+            .previewLayout(.sizeThatFits)
     }
 }

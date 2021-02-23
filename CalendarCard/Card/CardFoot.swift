@@ -22,5 +22,6 @@ struct CardFoot: View {
 struct CardFoot_Previews: PreviewProvider {
     static var previews: some View {
         CardFoot(date: Date(), baseColor: .green)
+            .previewLayout(.sizeThatFits)
     }
 }
