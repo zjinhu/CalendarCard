@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 struct NotiListView: View {
+    @Environment(\.presentationMode) var mode
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -20,7 +21,28 @@ struct NotiListView: View {
         NavigationView {
             
             EmptyList(items) { item in
-                Text("Item at \(item.time!, formatter: itemFormatter)")
+                
+                VStack(alignment: .leading){
+                    
+                    Text("\(item.title ?? "")")
+                        .font(.title)
+                    Text("\(item.info ?? "")")
+                        .font(.body)
+                    
+                    Divider()
+                        .padding(.horizontal, 20.0)
+                    
+                    HStack{
+                        Text("\(item.date?.getNotiDate() ?? "")")
+                            .font(.body)
+                            .fontWeight(.medium)
+                        Text("\(item.time?.getNotiTime() ?? "")")
+                            .font(.body)
+                    }
+                }
+                .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
+                .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                
             } emptyListView: {
                 
                 VStack{
@@ -31,19 +53,20 @@ struct NotiListView: View {
             } onDelete: { index in
                 deleteItems(offsets: index)
             }
-            .navigationBarTitle("Settings", displayMode: .inline)
-            .navigationBarItems(trailing: NavigationLink(destination:
-                NotiAddView()){
-                Text("Add")
-            })
-
-//            List {
-//                ForEach(items) { item in
-//                    Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-//                }
-//                .onDelete(perform: deleteItems)
-//            }
-
+            .navigationBarTitle("提醒", displayMode: .inline)
+            .navigationBarItems(leading:
+                                    Button(action: {
+                                        self.mode.wrappedValue.dismiss()
+                                    }) {
+                                        Image(systemName: "arrow.uturn.backward")
+                                    },
+                                trailing:
+                                    NavigationLink(destination:
+                                        NotiAddView()
+                                    ){
+                                        Image(systemName: "plus")
+                                    }
+            )
         }
     }
     
@@ -54,8 +77,6 @@ struct NotiListView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

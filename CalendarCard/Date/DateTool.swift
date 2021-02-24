@@ -8,7 +8,21 @@
 import Foundation
 
 extension Date {
-
+    
+    func getNotiDate() -> String{
+        let formater = DateFormatter()
+        formater.locale = Locale(identifier: "zh_CN")
+        formater.dateFormat = "MM月dd日 "
+        return formater.string(from: self) + getWeekDayString()
+    }
+    
+    func getNotiTime() -> String{
+        let formater = DateFormatter()
+        formater.locale = Locale(identifier: "zh_CN")
+        formater.dateFormat = "HH:mm"
+        return formater.string(from: self)
+    }
+    
     func todayCount() -> Int {
         let components = Calendar.current.dateComponents([.day], from: startOfCurrentYear(), to: self)
         return components.day ?? 0

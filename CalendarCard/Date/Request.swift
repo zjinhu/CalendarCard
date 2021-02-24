@@ -5,8 +5,6 @@
 //  Created by iOS on 2021/1/14.
 //
 import SwiftUI
-import Cache
-import Foundation
 import SwiftMesh
 ///http://timor.tech/api/holiday 日历相关接口
 ///
@@ -17,21 +15,8 @@ import SwiftMesh
 class Request {
     public static var shared : Request = {
         var re = Request()
-        re.expiryConfiguration()
         return re
     }()
-    
-    var storage: Storage<String, String>?
-    
-    func expiryConfiguration() {
-            let diskConfig = DiskConfig(
-                name: "DaisyCache",
-                expiry: .never
-            )
-            let memoryConfig = MemoryConfig(expiry: .never)
-
-            storage = try? Storage(diskConfig: diskConfig, memoryConfig: memoryConfig, transformer: TransformerFactory.forCodable(ofType: String.self))
-        }
     
     var holiday: [String: [String : Any]]?
 //        = ["01-01":["holiday":true,"name":"元旦","wage":3,"date":"2021-01-01","rest":1],
@@ -75,9 +60,9 @@ class Request {
 
     func getHoliday() {
 
-        let entry = try? storage?.entry(forKey: "holiday\(Date().getYear())")
+        let entry = UserDefaults.standard.object(forKey: "holiday\(Date().getYear())")
 
-        if let str = entry?.object, let dic = stringValueDic(str) {
+        if let str = entry as? String, let dic = stringValueDic(str) {
             self.holiday = dic
             return
         }
@@ -92,17 +77,17 @@ class Request {
                 return
             }
             self.holiday = holiday
-            try? self.storage?.setObject(self.dicValueString(holiday) ?? "", forKey: "holiday\(Date().getYear())")
-
+            UserDefaults.standard.set(self.dicValueString(holiday) ?? "", forKey: "holiday\(Date().getYear())")
+            
         } failure: { (_) in
             print("error getHoliday")
         }
     }
 
     func getInfo(_ date: String) -> Holiday?{
-        let entry = try? storage?.entry(forKey: "holiday\(Date().getYear())")
+        let entry = UserDefaults.standard.object(forKey: "holiday\(Date().getYear())")
 
-        guard let str = entry?.object, let dic = stringValueDic(str) else {
+        guard let str = entry as? String, let dic = stringValueDic(str) else {
             return nil
         }
 

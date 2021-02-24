@@ -14,7 +14,6 @@
 		81D6302525E4BD5D00F42ED5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6302425E4BD5D00F42ED5 /* Persistence.swift */; };
 		81D6302825E4BD5D00F42ED5 /* CalendarCard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81D6302625E4BD5D00F42ED5 /* CalendarCard.xcdatamodeld */; };
 		81D6303225E4BDAB00F42ED5 /* SwiftMesh in Frameworks */ = {isa = PBXBuildFile; productRef = 81D6303125E4BDAB00F42ED5 /* SwiftMesh */; };
-		81D6303625E4BDE300F42ED5 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 81D6303525E4BDE300F42ED5 /* Cache */; };
 		81D6303F25E4BE1D00F42ED5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D6303E25E4BE1D00F42ED5 /* WidgetKit.framework */; };
 		81D6304125E4BE1D00F42ED5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D6304025E4BE1D00F42ED5 /* SwiftUI.framework */; };
 		81D6304425E4BE1D00F42ED5 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6304325E4BE1D00F42ED5 /* Widget.swift */; };
@@ -41,7 +40,6 @@
 		81D6308325E4BE4A00F42ED5 /* SuitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6307825E4BE4A00F42ED5 /* SuitItem.swift */; };
 		81D6308425E4BE4A00F42ED5 /* CardHuangli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6307925E4BE4A00F42ED5 /* CardHuangli.swift */; };
 		81D6309F25E4BECD00F42ED5 /* SwiftMesh in Frameworks */ = {isa = PBXBuildFile; productRef = 81D6309E25E4BECD00F42ED5 /* SwiftMesh */; };
-		81D630A125E4BED000F42ED5 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 81D630A025E4BED000F42ED5 /* Cache */; };
 		81D630AD25E4BF3100F42ED5 /* SuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D630A525E4BF3000F42ED5 /* SuitView.swift */; };
 		81D630AE25E4BF3100F42ED5 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D630A625E4BF3000F42ED5 /* WeekView.swift */; };
 		81D630AF25E4BF3100F42ED5 /* AvoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D630A725E4BF3000F42ED5 /* AvoidView.swift */; };
@@ -56,6 +54,7 @@
 		81D630BE25E4C02100F42ED5 /* NotiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D630BD25E4C02100F42ED5 /* NotiListView.swift */; };
 		81D630C225E4C08000F42ED5 /* NotiAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D630C125E4C08000F42ED5 /* NotiAddView.swift */; };
 		81D630F125E4F5C200F42ED5 /* EmptyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D630F025E4F5C200F42ED5 /* EmptyList.swift */; };
+		81D630FB25E6034500F42ED5 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 81D630FA25E6034500F42ED5 /* ToastUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +127,8 @@
 		81D630BD25E4C02100F42ED5 /* NotiListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotiListView.swift; sourceTree = "<group>"; };
 		81D630C125E4C08000F42ED5 /* NotiAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiAddView.swift; sourceTree = "<group>"; };
 		81D630F025E4F5C200F42ED5 /* EmptyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyList.swift; sourceTree = "<group>"; };
+		81D6310625E6384600F42ED5 /* CalendarCard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalendarCard.entitlements; sourceTree = "<group>"; };
+		81D6310725E6384600F42ED5 /* WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D630FB25E6034500F42ED5 /* ToastUI in Frameworks */,
 				81D6303225E4BDAB00F42ED5 /* SwiftMesh in Frameworks */,
-				81D6303625E4BDE300F42ED5 /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +146,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				81D6304125E4BE1D00F42ED5 /* SwiftUI.framework in Frameworks */,
-				81D630A125E4BED000F42ED5 /* Cache in Frameworks */,
 				81D6303F25E4BE1D00F42ED5 /* WidgetKit.framework in Frameworks */,
 				81D6309F25E4BECD00F42ED5 /* SwiftMesh in Frameworks */,
 			);
@@ -157,6 +157,7 @@
 		81D6300F25E4BD5B00F42ED5 = {
 			isa = PBXGroup;
 			children = (
+				81D6310725E6384600F42ED5 /* WidgetExtension.entitlements */,
 				81D6301A25E4BD5B00F42ED5 /* CalendarCard */,
 				81D6304225E4BE1D00F42ED5 /* Widget */,
 				81D6303D25E4BE1D00F42ED5 /* Frameworks */,
@@ -176,6 +177,7 @@
 		81D6301A25E4BD5B00F42ED5 /* CalendarCard */ = {
 			isa = PBXGroup;
 			children = (
+				81D6310625E6384600F42ED5 /* CalendarCard.entitlements */,
 				81D6301B25E4BD5B00F42ED5 /* CalendarCardApp.swift */,
 				81D6301D25E4BD5B00F42ED5 /* ContentView.swift */,
 				81D630BC25E4C02100F42ED5 /* Noti */,
@@ -313,7 +315,7 @@
 			name = CalendarCard;
 			packageProductDependencies = (
 				81D6303125E4BDAB00F42ED5 /* SwiftMesh */,
-				81D6303525E4BDE300F42ED5 /* Cache */,
+				81D630FA25E6034500F42ED5 /* ToastUI */,
 			);
 			productName = CalendarCard;
 			productReference = 81D6301825E4BD5B00F42ED5 /* CalendarCard.app */;
@@ -334,7 +336,6 @@
 			name = WidgetExtension;
 			packageProductDependencies = (
 				81D6309E25E4BECD00F42ED5 /* SwiftMesh */,
-				81D630A025E4BED000F42ED5 /* Cache */,
 			);
 			productName = WidgetExtension;
 			productReference = 81D6303C25E4BE1D00F42ED5 /* WidgetExtension.appex */;
@@ -368,7 +369,7 @@
 			mainGroup = 81D6300F25E4BD5B00F42ED5;
 			packageReferences = (
 				81D6303025E4BDAB00F42ED5 /* XCRemoteSwiftPackageReference "SwiftMesh" */,
-				81D6303425E4BDE300F42ED5 /* XCRemoteSwiftPackageReference "Cache" */,
+				81D630F925E6034500F42ED5 /* XCRemoteSwiftPackageReference "ToastUI" */,
 			);
 			productRefGroup = 81D6301925E4BD5B00F42ED5 /* Products */;
 			projectDirPath = "";
@@ -587,6 +588,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CalendarCard/CalendarCard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarCard/Preview Content\"";
 				DEVELOPMENT_TEAM = BJSAM6XRY7;
@@ -599,6 +601,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.deerfly.CalendarCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -610,6 +613,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CalendarCard/CalendarCard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarCard/Preview Content\"";
 				DEVELOPMENT_TEAM = BJSAM6XRY7;
@@ -622,6 +626,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.deerfly.CalendarCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -632,6 +637,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BJSAM6XRY7;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -643,6 +649,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deerfly.CalendarCard.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -653,6 +660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BJSAM6XRY7;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -664,6 +672,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deerfly.CalendarCard.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -710,12 +719,12 @@
 				minimumVersion = 1.6.1;
 			};
 		};
-		81D6303425E4BDE300F42ED5 /* XCRemoteSwiftPackageReference "Cache" */ = {
+		81D630F925E6034500F42ED5 /* XCRemoteSwiftPackageReference "ToastUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hyperoslo/Cache";
+			repositoryURL = "https://github.com/quanshousio/ToastUI";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -726,20 +735,15 @@
 			package = 81D6303025E4BDAB00F42ED5 /* XCRemoteSwiftPackageReference "SwiftMesh" */;
 			productName = SwiftMesh;
 		};
-		81D6303525E4BDE300F42ED5 /* Cache */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 81D6303425E4BDE300F42ED5 /* XCRemoteSwiftPackageReference "Cache" */;
-			productName = Cache;
-		};
 		81D6309E25E4BECD00F42ED5 /* SwiftMesh */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 81D6303025E4BDAB00F42ED5 /* XCRemoteSwiftPackageReference "SwiftMesh" */;
 			productName = SwiftMesh;
 		};
-		81D630A025E4BED000F42ED5 /* Cache */ = {
+		81D630FA25E6034500F42ED5 /* ToastUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 81D6303425E4BDE300F42ED5 /* XCRemoteSwiftPackageReference "Cache" */;
-			productName = Cache;
+			package = 81D630F925E6034500F42ED5 /* XCRemoteSwiftPackageReference "ToastUI" */;
+			productName = ToastUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 
