@@ -21,27 +21,17 @@ struct NotiListView: View {
         NavigationView {
             
             EmptyList(items) { item in
-                
-                VStack(alignment: .leading){
-                    
-                    Text("\(item.title ?? "")")
-                        .font(.title)
-                    Text("\(item.info ?? "")")
-                        .font(.body)
-                    
-                    Divider()
-                        .padding(.horizontal, 20.0)
-                    
-                    HStack{
-                        Text("\(item.date?.getNotiDate() ?? "")")
-                            .font(.body)
-                            .fontWeight(.medium)
-                        Text("\(item.time?.getNotiTime() ?? "")")
-                            .font(.body)
-                    }
+                VStack{
+                    NotiListCell(title: item.title,
+                                 info: item.info,
+                                 date: item.date,
+                                 time: item.time)
                 }
-                .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
-                .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                .padding(/*@START_MENU_TOKEN@*/.vertical, 5.0/*@END_MENU_TOKEN@*/)
+                .padding(.horizontal, 10.0)
+                .background(Color(.systemBackground))
+                .listRowInsets(EdgeInsets(top: -1, leading: -1, bottom: -1, trailing: -1))
+                
                 
             } emptyListView: {
                 
@@ -86,7 +76,7 @@ struct NotiListView: View {
 
 struct NotiListView_Previews: PreviewProvider {
     static var previews: some View {
-        NotiListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        NotiListView().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
 }
 

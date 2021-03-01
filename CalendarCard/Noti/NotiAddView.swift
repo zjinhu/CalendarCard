@@ -110,7 +110,7 @@ struct NotiAddView: View {
 
 struct NotiAddView_Previews: PreviewProvider {
     static var previews: some View {
-        NotiAddView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        NotiAddView().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		817153B425E8B1F2009EE683 /* NotiListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817153B325E8B1F2009EE683 /* NotiListCell.swift */; };
 		81D6301C25E4BD5B00F42ED5 /* CalendarCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6301B25E4BD5B00F42ED5 /* CalendarCardApp.swift */; };
 		81D6301E25E4BD5B00F42ED5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6301D25E4BD5B00F42ED5 /* ContentView.swift */; };
 		81D6302025E4BD5D00F42ED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81D6301F25E4BD5D00F42ED5 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		817153B325E8B1F2009EE683 /* NotiListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiListCell.swift; sourceTree = "<group>"; };
 		81D6301825E4BD5B00F42ED5 /* CalendarCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D6301B25E4BD5B00F42ED5 /* CalendarCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCardApp.swift; sourceTree = "<group>"; };
 		81D6301D25E4BD5B00F42ED5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -288,9 +290,10 @@
 		81D630BC25E4C02100F42ED5 /* Noti */ = {
 			isa = PBXGroup;
 			children = (
-				81D630BD25E4C02100F42ED5 /* NotiListView.swift */,
-				81D630C125E4C08000F42ED5 /* NotiAddView.swift */,
 				81D630F025E4F5C200F42ED5 /* EmptyList.swift */,
+				81D630BD25E4C02100F42ED5 /* NotiListView.swift */,
+				817153B325E8B1F2009EE683 /* NotiListCell.swift */,
+				81D630C125E4C08000F42ED5 /* NotiAddView.swift */,
 			);
 			path = Noti;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				81D6306425E4BE4100F42ED5 /* CalendarWeek.swift in Sources */,
 				81D6308125E4BE4A00F42ED5 /* FootRight.swift in Sources */,
 				81D6307C25E4BE4A00F42ED5 /* CardHoliday.swift in Sources */,
+				817153B425E8B1F2009EE683 /* NotiListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

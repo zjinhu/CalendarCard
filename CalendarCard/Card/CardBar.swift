@@ -36,6 +36,7 @@ struct CardBar: View {
             .frame(width: 60.0, height: 50.0)
             .sheet(isPresented: $isNotiPresented) {
                 NotiListView()
+                    .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
             }
             
             Button(action: {
