@@ -112,9 +112,9 @@ struct CardView<Content: View>: View {
                 let distance = hypot(offset.width, offset.height)
                 
                 if distance > threshold {
-                    swipe()
+                    withAnimation { self.swipe()}
                 } else {
-                    offset = .zero
+                    withAnimation { self.offset = .zero}
                 }
             }
     }

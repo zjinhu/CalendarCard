@@ -131,7 +131,7 @@ struct Tool {
     }
     
     static func isWeekDay(date: Date) -> Bool{
-        switch date.getWeekDay() {
+        switch date.getWeekNum() {
         case 7, 1:
             return true
         default:

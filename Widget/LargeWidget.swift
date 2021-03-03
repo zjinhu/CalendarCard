@@ -10,7 +10,7 @@ import WidgetKit
 struct LargeWidget: View {
     let date: Date
     var body: some View {
-        VStack(spacing: 10.0){
+        VStack{
             
             ZStack{
             
@@ -33,15 +33,14 @@ struct LargeWidget: View {
 
             WeekView()
             
-            LazyVGrid(columns: Array(repeating: GridItem(spacing: 2, alignment: .center), count: 7), spacing: 2) {
+            LazyVGrid(columns: Array(repeating: GridItem(spacing: 2), count: 7), spacing: 2) {
                 
                 ForEach(date.getMonthDays(), id: \.self) { date in
                     DayView(date: date, status: LunarTool.getHoliday(date: date))
-                        .frame(maxWidth: .infinity)
                 }
             }
             .padding(.horizontal, 5.0)
-            
+
             Spacer()
         }
     }

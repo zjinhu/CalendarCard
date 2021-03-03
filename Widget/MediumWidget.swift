@@ -39,7 +39,7 @@ struct MediumWidget: View {
                 AvoidView(date: date).frame(maxWidth: .infinity)
             }
             .padding([.leading, .trailing], 12.0)
-            Spacer()
+            .padding(.bottom, 12.0)
         }
     }
 }

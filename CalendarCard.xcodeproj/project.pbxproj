@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		815C830425EDEF8600B18E0C /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C830325EDEF8600B18E0C /* NotificationHandler.swift */; };
+		815C832B25EE298600B18E0C /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C832A25EE298600B18E0C /* CardListView.swift */; };
 		817153B425E8B1F2009EE683 /* NotiListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817153B325E8B1F2009EE683 /* NotiListCell.swift */; };
 		81D6301C25E4BD5B00F42ED5 /* CalendarCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6301B25E4BD5B00F42ED5 /* CalendarCardApp.swift */; };
 		81D6301E25E4BD5B00F42ED5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6301D25E4BD5B00F42ED5 /* ContentView.swift */; };
@@ -83,6 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		815C830325EDEF8600B18E0C /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		815C832A25EE298600B18E0C /* CardListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		817153B325E8B1F2009EE683 /* NotiListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiListCell.swift; sourceTree = "<group>"; };
 		81D6301825E4BD5B00F42ED5 /* CalendarCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D6301B25E4BD5B00F42ED5 /* CalendarCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCardApp.swift; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 		81D6306E25E4BE4A00F42ED5 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				815C832A25EE298600B18E0C /* CardListView.swift */,
 				81D6306F25E4BE4A00F42ED5 /* CardBar.swift */,
 				81D6307025E4BE4A00F42ED5 /* CardHead.swift */,
 				81D6307125E4BE4A00F42ED5 /* CardHoliday.swift */,
@@ -294,6 +299,7 @@
 				81D630BD25E4C02100F42ED5 /* NotiListView.swift */,
 				817153B325E8B1F2009EE683 /* NotiListCell.swift */,
 				81D630C125E4C08000F42ED5 /* NotiAddView.swift */,
+				815C830325EDEF8600B18E0C /* NotificationHandler.swift */,
 			);
 			path = Noti;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81D6306B25E4BE4600F42ED5 /* CardView.swift in Sources */,
+				815C830425EDEF8600B18E0C /* NotificationHandler.swift in Sources */,
 				81D6302525E4BD5D00F42ED5 /* Persistence.swift in Sources */,
 				81D6306225E4BE4100F42ED5 /* CalenderDay.swift in Sources */,
 				81D6302825E4BD5D00F42ED5 /* CalendarCard.xcdatamodeld in Sources */,
@@ -423,6 +430,7 @@
 				81D6301C25E4BD5B00F42ED5 /* CalendarCardApp.swift in Sources */,
 				81D6307F25E4BE4A00F42ED5 /* CardFoot.swift in Sources */,
 				81D6307A25E4BE4A00F42ED5 /* CardBar.swift in Sources */,
+				815C832B25EE298600B18E0C /* CardListView.swift in Sources */,
 				81D6306625E4BE4100F42ED5 /* CalendarView.swift in Sources */,
 				81D6305825E4BE3B00F42ED5 /* Request.swift in Sources */,
 				81D6306525E4BE4100F42ED5 /* Util.swift in Sources */,

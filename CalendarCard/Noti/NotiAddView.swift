@@ -7,7 +7,6 @@
 
 import SwiftUI
 import CoreData
-import ToastUI
 
 struct NotiAddView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -16,8 +15,6 @@ struct NotiAddView: View {
     @State var date: Date = Date()
     @State var time: Date = Date()
 
-    @State private var showToast = false
-    
     @ObservedObject var titleLimit = TextBindingManager(limit: 20)
     @ObservedObject var infoLimit = TextBindingManager(limit: 100)
     
@@ -66,30 +63,21 @@ struct NotiAddView: View {
                     addItem()
                 }) {
                     Text("保存")
-                }
+                }.disabled(isCanSave())
             }
-        }
-        .toast(isPresented: $showToast, dismissAfter: 2.0) {
-            VStack {
-                Text("请填写新提醒名称")
-                    .font(.system(size: 18))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-            }
-            .frame(width: 200.0, height: 50.0)
-            .background(Color.black)
-            .cornerRadius(8.0)
         }
         .navigationBarTitle("添加提醒", displayMode: .inline)
 
     }
     
-    private func addItem() {
-
+    func isCanSave() -> Bool{
         if titleLimit.text.isEmpty{
-            showToast.toggle()
-            return
+            return true
         }
+        return false
+    }
+    
+    private func addItem() {
 
         let newItem = Item(context: viewContext)
         newItem.time = time

@@ -47,7 +47,7 @@ extension Date {
         var date = self
         ///因为一周的起始日是周日,周日已经算是下一周了
         ///如果是周日就到退回去两天
-        let weekCount = date.getWeekDay()
+        let weekCount = date.getWeekNum()
         if weekCount == 1 {
             date = date.addingTimeInterval(-60 * 60 * 24 * 2)
         }
@@ -66,7 +66,7 @@ extension Date {
         var date = self
         ///因为一周的起始日是周日,周日已经算是下一周了
         ///如果是周日就到退回去两天
-        let weekCount = date.getWeekDay()
+        let weekCount = date.getWeekNum()
         if weekCount <= 2 {
             date = date.addingTimeInterval(-60 * 60 * 24 * 2)
         }
@@ -123,12 +123,32 @@ extension Date {
         return components.day ?? 0
     }
     
-    func getWeekDay() -> Int{
+    /////////////////////////
+    func getYearNum() -> Int{
+        let components = calendar.dateComponents([.year], from: self)
+        let num = components.year!
+        return num
+    }
+    
+    func getMonthNum() -> Int{
+        let components = calendar.dateComponents([.month], from: self)
+        let num = components.month!
+        return num
+    }
+    
+    func getDayNum() -> Int{
+        let components = calendar.dateComponents([.day], from: self)
+        let num = components.day!
+        return num
+    }
+
+    func getWeekNum() -> Int{
         ///拿到现在的week数字
         let components = calendar.dateComponents([.weekday], from: self)
         let weekCount = components.weekday!
         return weekCount
     }
+    ////////////////////////////////////////////
     
     func isWeekDay() -> Bool{
         let components = calendar.dateComponents([.weekday], from: self)
@@ -137,7 +157,7 @@ extension Date {
     
     func getWeekDayString() -> String{
         let array = ["","周日","周一","周二","周三","周四","周五","周六"]
-        return array[getWeekDay()]
+        return array[getWeekNum()]
     }
     
     func toString() -> String{

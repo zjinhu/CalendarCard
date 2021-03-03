@@ -14,7 +14,7 @@ struct FootRight: View {
         VStack {
             HStack {
                 Spacer()
-                Text(LunarTool.getWeekEng(week: date.getWeekDay()))
+                Text(LunarTool.getWeekEng(week: date.getWeekNum()))
                     .font(.system(size: 16))
                     .foregroundColor(baseColor)
                 Spacer()
@@ -22,7 +22,7 @@ struct FootRight: View {
             .frame(height: 30.0)
             .background(Color("Bottom_Color"))
             
-            Text(LunarTool.getWeekChn(week: date.getWeekDay()))
+            Text(LunarTool.getWeekChn(week: date.getWeekNum()))
                 .font(Font.system(size: 30))
                 .fontWeight(.bold)
                 .foregroundColor(Color("Bottom_Color"))

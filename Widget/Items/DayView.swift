@@ -16,18 +16,18 @@ struct DayView: View {
             VStack{
                 
                 Text("\(date.getDateInfo().2)")
-                    .frame(width: 40, height: 24, alignment: .center)
                     .font(.system(size: 18))
                     .foregroundColor(getColor(color:date.isWeekDay() ? Color("red_color_2") : Color("title_color")))
-                
+                    .padding(.top, 4.0)
                 
                 Text("\(LunarTool.getInfo(date: date))")
                     .font(.system(size: 11))
                     .foregroundColor(getColor(color:date.isWeekDay() ? Color("red_color_2") : Color("lunar_color")))
                     .multilineTextAlignment(.center)
+                    .padding(.bottom, 5.0)
                     .fixedSize(horizontal: true, vertical: false)
             }
-            .padding(.bottom, 3.0)
+            .frame(maxWidth: 50)
             .overlay(
                 RoundedRectangle(cornerRadius: 5).stroke(date.isToday() ? Color("red_color_2") : Color.clear, lineWidth: 2)
             )

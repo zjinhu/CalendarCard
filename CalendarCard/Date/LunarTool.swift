@@ -53,7 +53,7 @@ struct LunarTool {
     }
     
     static func isWeekEnd(date: Date) -> Bool{
-        let week = date.getWeekDay()
+        let week = date.getWeekNum()
         switch week {
         case 7, 1:
             return true
@@ -158,7 +158,7 @@ struct LunarTool {
         
         let holiday = Request.shared.getInfo(key)
         
-        let week = date.getWeekDay()
+        let week = date.getWeekNum()
         
         switch week {
         case 7, 1:
