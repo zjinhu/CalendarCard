@@ -18,15 +18,6 @@
           "revision": "efbc4f75f01deef6ec73be2a1a266308332bda03",
           "version": "1.6.1"
         }
-      },
-      {
-        "package": "ToastUI",
-        "repositoryURL": "https://github.com/quanshousio/ToastUI",
-        "state": {
-          "branch": null,
-          "revision": "e1fd43336630b40a4273a346bd9e6c250151c88d",
-          "version": "2.0.0"
-        }
       }
     ]
   },

@@ -57,7 +57,6 @@
 		81D630BE25E4C02100F42ED5 /* NotiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D630BD25E4C02100F42ED5 /* NotiListView.swift */; };
 		81D630C225E4C08000F42ED5 /* NotiAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D630C125E4C08000F42ED5 /* NotiAddView.swift */; };
 		81D630F125E4F5C200F42ED5 /* EmptyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D630F025E4F5C200F42ED5 /* EmptyList.swift */; };
-		81D630FB25E6034500F42ED5 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 81D630FA25E6034500F42ED5 /* ToastUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +141,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81D630FB25E6034500F42ED5 /* ToastUI in Frameworks */,
 				81D6303225E4BDAB00F42ED5 /* SwiftMesh in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,7 +322,6 @@
 			name = CalendarCard;
 			packageProductDependencies = (
 				81D6303125E4BDAB00F42ED5 /* SwiftMesh */,
-				81D630FA25E6034500F42ED5 /* ToastUI */,
 			);
 			productName = CalendarCard;
 			productReference = 81D6301825E4BD5B00F42ED5 /* CalendarCard.app */;
@@ -378,7 +375,6 @@
 			mainGroup = 81D6300F25E4BD5B00F42ED5;
 			packageReferences = (
 				81D6303025E4BDAB00F42ED5 /* XCRemoteSwiftPackageReference "SwiftMesh" */,
-				81D630F925E6034500F42ED5 /* XCRemoteSwiftPackageReference "ToastUI" */,
 			);
 			productRefGroup = 81D6301925E4BD5B00F42ED5 /* Products */;
 			projectDirPath = "";
@@ -731,14 +727,6 @@
 				minimumVersion = 1.6.1;
 			};
 		};
-		81D630F925E6034500F42ED5 /* XCRemoteSwiftPackageReference "ToastUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/quanshousio/ToastUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -751,11 +739,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 81D6303025E4BDAB00F42ED5 /* XCRemoteSwiftPackageReference "SwiftMesh" */;
 			productName = SwiftMesh;
-		};
-		81D630FA25E6034500F42ED5 /* ToastUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 81D630F925E6034500F42ED5 /* XCRemoteSwiftPackageReference "ToastUI" */;
-			productName = ToastUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 

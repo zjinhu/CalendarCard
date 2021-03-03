@@ -13,7 +13,6 @@ struct CardListView: View {
     
     var body: some View {
         ZStack{
-
             Button(action: {
                 NotificationCenter.default.post(name: NSNotification.Name.init(CardNotification), object: Date().todayCount())
             }){
@@ -42,7 +41,6 @@ struct CardListView: View {
             .padding(.bottom, 20.0)
 
         }
-        .navigationBarHidden(true)
     }
 }
 
