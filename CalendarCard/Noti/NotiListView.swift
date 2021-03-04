@@ -44,18 +44,19 @@ struct NotiListView: View {
                 deleteItems(offsets: index)
             }
             .navigationBarTitle("提醒", displayMode: .inline)
-            .navigationBarItems(leading:
-                                    Button(action: {
-                                        self.mode.wrappedValue.dismiss()
-                                    }) {
-                                        Image(systemName: "arrow.uturn.backward")
-                                    },
-                                trailing:
-                                    NavigationLink(destination:
-                                        NotiAddView()
-                                    ){
-                                        Image(systemName: "plus")
-                                    }
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        mode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "arrow.uturn.backward")
+                    },
+                trailing:
+                    NavigationLink(destination:
+                                    NotiAddView()
+                    ){
+                        Image(systemName: "plus")
+                    }
             )
         }
     }

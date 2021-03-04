@@ -30,10 +30,10 @@ public struct EmptyList<Items: RandomAccessCollection, ListRowView: View, EmptyL
             if !items.isEmpty {
                 List {
                     ForEach(items) { item in
-                        self.listRowView(item)
+                        listRowView(item)
                     }
                     .onDelete { index in
-                        self.onDelete(index)
+                        onDelete(index)
                     }
                 }
             } else {

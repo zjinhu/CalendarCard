@@ -52,7 +52,7 @@ struct NotiAddView: View {
             Section {
                 Picker(selection: $selectedIndex, label: Text("重复")) {
                     ForEach(0 ..< repeats.count) {
-                        Text(self.repeats[$0])
+                        Text(repeats[$0])
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -86,7 +86,7 @@ struct NotiAddView: View {
         newItem.info = infoLimit.text
         do {
             try viewContext.save()
-            self.presentationMode.wrappedValue.dismiss()
+            presentationMode.wrappedValue.dismiss()
         } catch {
 
             let nsError = error as NSError

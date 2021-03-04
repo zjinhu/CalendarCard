@@ -293,10 +293,10 @@
 		81D630BC25E4C02100F42ED5 /* Noti */ = {
 			isa = PBXGroup;
 			children = (
-				81D630F025E4F5C200F42ED5 /* EmptyList.swift */,
 				81D630BD25E4C02100F42ED5 /* NotiListView.swift */,
 				817153B325E8B1F2009EE683 /* NotiListCell.swift */,
 				81D630C125E4C08000F42ED5 /* NotiAddView.swift */,
+				81D630F025E4F5C200F42ED5 /* EmptyList.swift */,
 				815C830325EDEF8600B18E0C /* NotificationHandler.swift */,
 			);
 			path = Noti;

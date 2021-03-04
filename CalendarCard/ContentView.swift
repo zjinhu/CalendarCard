@@ -20,3 +20,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+//#if os(OSX)
+//
+//#endif
