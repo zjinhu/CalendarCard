@@ -30,6 +30,27 @@ extension Date {
         return Calendar(identifier: Calendar.current.identifier)
     }
 
+    
+    init?(calendar: Calendar? = Calendar.current,
+          timeZone: TimeZone? = NSTimeZone.default,
+          year: Int? = Date().getYearNum(),
+          month: Int? = Date().getMonthNum(),
+          day: Int? = Date().getDayNum(),
+          hour: Int? = Date().getHourNum(),
+          minute: Int? = Date().getMinuteNum()) {
+
+        var components = DateComponents()
+        components.calendar = calendar
+        components.timeZone = timeZone
+        components.year = year
+        components.month = month
+        components.day = day
+        components.hour = hour
+        components.minute = minute
+
+        guard let date = calendar?.date(from: components) else { return nil }
+        self = date
+    }
 
     func isToday() -> Bool{
         return calendar.isDateInToday(self)
@@ -147,6 +168,18 @@ extension Date {
         let components = calendar.dateComponents([.weekday], from: self)
         let weekCount = components.weekday!
         return weekCount
+    }
+    
+    func getHourNum() -> Int{
+        let components = calendar.dateComponents([.hour], from: self)
+        let num = components.hour!
+        return num
+    }
+    
+    func getMinuteNum() -> Int{
+        let components = calendar.dateComponents([.minute], from: self)
+        let num = components.minute!
+        return num
     }
     ////////////////////////////////////////////
     

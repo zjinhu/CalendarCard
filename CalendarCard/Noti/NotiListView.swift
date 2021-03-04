@@ -12,7 +12,7 @@ struct NotiListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.date, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.date, ascending: false)],
         animation: .default)
     private var items: FetchedResults<Item>
 
@@ -53,7 +53,7 @@ struct NotiListView: View {
                     },
                 trailing:
                     NavigationLink(destination:
-                                    NotiAddView()
+                        NotiAddView()
                     ){
                         Image(systemName: "plus")
                     }

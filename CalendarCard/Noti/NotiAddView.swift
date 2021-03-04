@@ -87,6 +87,20 @@ struct NotiAddView: View {
         do {
             try viewContext.save()
             presentationMode.wrappedValue.dismiss()
+            
+            guard let noti = Date(year: date.getYearNum(),
+                                  month: date.getMonthNum(),
+                                  day: date.getDayNum(),
+                                  hour: time.getHourNum(),
+                                  minute: time.getMinuteNum()) else {
+                return
+            }
+            
+            NotificationHandler.shared.calendarNoti(title: titleLimit.text,
+                                                    body: infoLimit.text,
+                                                    identifier: titleLimit.text,
+                                                    date: noti,
+                                                    repeats: 0)
         } catch {
 
             let nsError = error as NSError

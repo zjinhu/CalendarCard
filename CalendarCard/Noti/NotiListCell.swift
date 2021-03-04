@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NotiListCell: View {
+
     let title: String?
     let info: String?
     let date: Date?
@@ -39,6 +40,7 @@ struct NotiListCell: View {
                 Text("\(time?.getNotiTime() ?? "")")
                     .font(.body)
                     .padding(.leading, 10.0)
+
             }
             .padding(.bottom, 10.0)
             .frame(height: 30.0)
