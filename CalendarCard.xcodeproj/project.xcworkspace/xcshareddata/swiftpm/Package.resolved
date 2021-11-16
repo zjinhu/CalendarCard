@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "eaf6e622dd41b07b251d8f01752eab31bc811493",
-          "version": "5.4.1"
+          "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
+          "version": "5.4.4"
         }
       },
       {
@@ -15,8 +15,17 @@
         "repositoryURL": "https://github.com/jackiehu/SwiftMesh",
         "state": {
           "branch": null,
-          "revision": "efbc4f75f01deef6ec73be2a1a266308332bda03",
-          "version": "1.6.1"
+          "revision": "9edea4fcab7e73461e842ea3f689e253755bc541",
+          "version": "1.6.6"
+        }
+      },
+      {
+        "package": "SwiftUIX",
+        "repositoryURL": "https://github.com/SwiftUIX/SwiftUIX",
+        "state": {
+          "branch": null,
+          "revision": "ac4959d321d2fbf6b66720426ef0716b6865ddd8",
+          "version": "0.1.0"
         }
       }
     ]
