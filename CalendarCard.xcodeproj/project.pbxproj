@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8124F20227423FFF00943EA7 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 8124F20127423FFF00943EA7 /* SwiftUIX */; };
 		815C830425EDEF8600B18E0C /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C830325EDEF8600B18E0C /* NotificationHandler.swift */; };
 		815C832B25EE298600B18E0C /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C832A25EE298600B18E0C /* CardListView.swift */; };
 		817153B425E8B1F2009EE683 /* NotiListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817153B325E8B1F2009EE683 /* NotiListCell.swift */; };
@@ -143,7 +142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				81D6303225E4BDAB00F42ED5 /* SwiftMesh in Frameworks */,
-				8124F20227423FFF00943EA7 /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +322,6 @@
 			name = CalendarCard;
 			packageProductDependencies = (
 				81D6303125E4BDAB00F42ED5 /* SwiftMesh */,
-				8124F20127423FFF00943EA7 /* SwiftUIX */,
 			);
 			productName = CalendarCard;
 			productReference = 81D6301825E4BD5B00F42ED5 /* CalendarCard.app */;
@@ -378,7 +375,6 @@
 			mainGroup = 81D6300F25E4BD5B00F42ED5;
 			packageReferences = (
 				81D6303025E4BDAB00F42ED5 /* XCRemoteSwiftPackageReference "SwiftMesh" */,
-				8124F20027423FFF00943EA7 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = 81D6301925E4BD5B00F42ED5 /* Products */;
 			projectDirPath = "";
@@ -725,14 +721,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8124F20027423FFF00943EA7 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
 		81D6303025E4BDAB00F42ED5 /* XCRemoteSwiftPackageReference "SwiftMesh" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jackiehu/SwiftMesh";
@@ -744,11 +732,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8124F20127423FFF00943EA7 /* SwiftUIX */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8124F20027423FFF00943EA7 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
-			productName = SwiftUIX;
-		};
 		81D6303125E4BDAB00F42ED5 /* SwiftMesh */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 81D6303025E4BDAB00F42ED5 /* XCRemoteSwiftPackageReference "SwiftMesh" */;

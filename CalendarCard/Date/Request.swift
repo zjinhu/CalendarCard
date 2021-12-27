@@ -67,7 +67,7 @@ class Request {
             return
         }
         
-        MeshManager.shared.requestWithConfig { (config) in
+        Mesh.requestWithConfig { (config) in
             config.URLString = "https://timor.tech/api/holiday/year/\(Date().getYear())/"
             config.requestMethod = .get
         } success: { (config) in
